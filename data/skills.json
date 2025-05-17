@@ -1,0 +1,53 @@
+
+[
+    {
+        "id":1,
+        "title": "HTML",
+        "icon":"./data/html.png",
+        "description":""
+    },
+      {
+        "id":2,
+        "title": "Javascript",
+        "icon":"./data/js.png",
+        "description":""
+    },
+      {
+        "id":3,
+        "title": "CSS",
+        "icon":"./data/css.png",
+        "description":""
+    },
+      {
+        "id":4,
+        "title": "React.js",
+        "icon":"./data/react.png",
+        "description":""
+    },
+      {
+        "id":5,
+        "title": "Node.js",
+        "icon":"./data/node.png",
+        "description":""
+    }, 
+     {
+        "id":6,
+        "title": "SEO",
+        "icon":"./data/seo.png",
+        "description":""
+    },
+     {
+        "id":7,
+        "title": "Bootstrap",
+        "icon":"./data/bootstrap.png",
+        "description":""
+    },
+   
+      {
+        "id":8,
+        "title": "MongoDB",
+        "icon":"./data/dbase.png",
+        "description":""
+    }
+    
+]

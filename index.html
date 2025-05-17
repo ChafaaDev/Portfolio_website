@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+</head>
+<body data-bs-theme="dark">
+  <header>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li class="nav-link"><a href="#">CH Coding</a></li>
+    <li class="nav-link"><a href="#">About</a></li>
+    <li class="nav-link"><a href="#">Skills</a></li>
+    <li class="nav-link"><a href="#" id="openModal">Contact</a></li>
+    <li><button id="themeBtn"><i class="bi bi-brightness-high"></i></button></li>
+  </ul>
+</nav>
+<!-- <div class="banner">
+  <img src="./images/bc_code.jpeg" alt="" height="300" width="100%" style="object-fit: cover;border-radius: 10px;">
+  <h1 class="main-title">Welcome to CH Coding</h1>
+</div> -->
+  </header>
+    <main>
+       <section id="about" data-aos="zoom-out-down">
+      <div class="about-container">
+         <div class="hero-section">
+        <h1 class="hero-section-title">Chafaa Dev Full-Stack</h1>
+        <span class="hero-section-subtext">Fullstack developper, currently living in Paris</span>
+        <a href="#" id="about-link">About me</a>
+       </div>
+       <!-- <figure>
+        <img src="./images/ChaMouhoubi.jpeg" alt="">
+       </figure> -->
+      </div>
+       </section>
+  <section class="my-works">
+    <h2 style="text-align: center; color: #fff;"><i class="bi bi-pc-display-horizontal"></i> My works</h2>
+<div class="container">
+        <figure class="figure" data-aos="zoom-out-down">
+  <img src="./images/Screenshot_16-5-2025_03556_localhost.jpeg" class="figure-img img-fluid rounded" alt="..." height="400">
+  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>
+<figure class="figure" data-aos="zoom-in-right">
+  <img src="./images/Screenshot_16-5-2025_02959_127.0.0.1.jpeg" class="figure-img img-fluid rounded" alt="..." height="400">
+  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>
+<figure class="figure">
+  <img src="./images/nina.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>
+<figure class="figure" data-aos="zoom-in-left">
+  <img src="./images/nina.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>
+</div>
+  </section>
+<section id="skills">
+  <h2><i class="bi bi-code-square"></i> Skills</h2>
+  <div class="scroll-track"></div>
+</section>
+    </main>
+    <section id="contact" class="reveal">
+       
+    </section>
+    <dialog class="contact-form">
+      <button id="closeModal"><i class="bi bi-x-lg"></i></button>
+       <form action="#">
+            <h3><i class="bi bi-telephone"></i> Contact</h3>
+            <label for="name">Full name:</label>
+            <input type="text" id="name">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <label for="description">Tell me what you need</label>
+            <textarea name="description" id="description" placeholder="your message here...">
+            </textarea>
+        </form>
+    </dialog>
+    <footer>
+        <ul class="footer-links">
+            <li>instagram</li>
+           <li> twitter </li>
+           <li>LinkedIn</li>
+        </ul>
+    </footer>
+<script>
+  AOS.init()
+</script>
+</body>
+</html>
