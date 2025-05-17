@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="script.js" defer></script>
+     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <title>CH Coding About, page</title>
+</head>
+<body data-bs-theme="dark">
+     <header>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li class="nav-link"><a href="./index.html">CH Coding</a></li>
+    <li class="nav-link"><a href="#" style="color: #FF9142;" aria-disabled="true">About</a></li>
+    <li class="nav-link"><a href="#">Skills</a></li>
+    <li class="nav-link"><a href="#" id="openModal">Contact</a></li>
+    <li><button id="themeBtn"><i class="bi bi-brightness-high"></i></button></li>
+  </ul>
+</nav> 
+<section class="about-me">
+    <article class="about container" style="box-sizing: border-box;" data-aos="zoom-out-down">
+   <div class="about-me-text">
+     <h1 class="subtitle">Full-Stack developer</h2>
+    <p style="font-family: 'Syne' sans-serif; font-size: 1.3em;">
+        Solutions Bringing ideas to life through clean code and innovative design. 
+        As a passionate full-stack developer, I build seamless web experiences from front to back, ensuring functionality meets creativity.
+        Whether it's crafting intuitive user interfaces or optimizing backend logic, I thrive on turning complex problems into elegant solutions. 
+        Let's build something great together.
+    </p>
+    <a href="#" class="resume-link">Download resume</a>
+   </div>
+    <div class="image-container">
+       <figure class="figure">
+         <img src="./images//ChaMouhoubi.jpeg" alt="" height="500">
+       </figure>
+    </div>
+    </article>
+    <section class="links-to-follow">
+        <h2>Follow me on</h2>
+        <div class="links-container">
+            <ul class="links-list">
+                <li><a href=""><i class="bi bi-instagram"></i></a></li>
+                <li><a href=""><i class="bi bi-linkedin"></i></a></li>
+                <li><a href=""><i class="bi bi-github"></i></a></li>
+                <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
+            </ul>
+        </div>
+    </section>
+</section>
+<footer style="display: flex;justify-content: center; font-family: 'Syne';">
+    <script>
+        const date = new Date().getFullYear();
+        const copywrite =  `<i class="bi bi-c-circle"></i>  copywrite ${date}`
+        document.querySelector('footer').innerHTML = copywrite
+    </script>
+</footer>
+<script>
+      AOS.init()
+</script>
+</body>
+</html>

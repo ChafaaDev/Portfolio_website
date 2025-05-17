@@ -360,3 +360,56 @@ h2{
 .hidden{
 animation: hide .3s linear;
 }
+.about{
+    display: flex;
+}
+.about-me-text{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ff5e42;
+    justify-content:center;
+    padding: 1em;  
+    height: 500px;
+    box-sizing: border-box;
+    align-items: center;
+    .subtitle{
+        font-family:'Share Tech', sans-serif;
+        font-size: 70px;
+    }
+}
+.about-me .image-container .figure{
+   position: relative;
+}
+.about-me .image-container .figure::before{
+     content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    padding: 5px;
+    /* box-shadow: 2px 2px 25px hwb(38 27% 11%); */
+}
+.links-container .links-list{
+ list-style: none;
+ display: flex;
+ justify-content: end;
+ align-items: center;
+ gap: 1em;
+ padding: 1em;
+ box-sizing: border-box;
+}
+.links-container .links-list li a{
+    text-decoration: none;
+    color: inherit;
+}
+.links-to-follow{
+    margin-top: 5em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.links-to-follow h2{
+    font-family: 'Share Tech', sans-serif;
+}
