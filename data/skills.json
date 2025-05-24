@@ -70,6 +70,13 @@
         "icon":"./data/nextjs.png",
         "description":"",
          "level":"35%"
+    },
+             {
+        "id":10,
+        "title": "Npm",
+        "icon":"./data/npm.avif",
+        "description":"",
+         "level":"50%"
     }
     
 ]

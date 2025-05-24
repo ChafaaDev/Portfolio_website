@@ -20,7 +20,9 @@ toggleTheme();
 function createWorksCards(works){
   for(let i = 0 ; i < works.length ; i++){
     const element = works[i]
-    const workCard = document.createElement('div')
+    const workCard = document.createElement('div');
+    workCard.classList.add('card');
+    workCard.setAttribute('data-category', element.category);
     workCard.innerHTML = `
   <img src=${element.cover} class="card-img-top img-fluid" alt=${element.title} height="300">
   <div class="card-body">
@@ -30,10 +32,12 @@ function createWorksCards(works){
     <button class="btn btn-secondary" id="seeMoreBtn" onclick="canvasoOn('${element.title}', '${element.snapShots.url}')">See more</button>
   </div>
 `
-workCard.classList.add('card')
+
 
 document.querySelector('.cards-container').appendChild(workCard)
+    
   }
+  filterWorksCards(document.querySelectorAll('.cards-container .card'))
 }
 
 async function fetchWorks(){
@@ -109,27 +113,71 @@ fetchSkillCards()
     bsOffcanvas.show() 
   }
  
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger,ScrollSmoother)
   let smoother = ScrollSmoother.create({
   wrapper:"#smooth-wrapper",
   content:"#smooth-content",
-  smooth:1.5,
-  effects:true,
-  start:0,
-  end:200,
+  smooth:1.5
   })
-  //  document.querySelectorAll("a[href^='#']").forEach(anchor=>{
-  //   anchor.addEventListener('click', (e)=>{
-  //     e.preventDefault();
-  //     const targetId = e.target.getAttribute('href');
-  //     const targetEl = document.querySelector(targetId);
-  //           gsap.to(smoother,{
-  //             scrollTop:smoother.offset(targetEl, "top top"),
-  //             duration:1.5
-  //           })
+   document.querySelectorAll("a[href^='#']").forEach(anchor=>{
+    anchor.addEventListener('click', (e)=>{
+      e.preventDefault()
+      const targetId = e.target.getAttribute('href');
+      const targetEl = document.querySelector(targetId);
+            gsap.to(smoother,{
+              scrollTop:smoother.offset(targetEl, "top top"),
+              duration:1.5,
+              ease:'Back.out'
+            })
           
-  //   })
+    })
    
-  // })
-})
+  })
+  
+});
+
+
+// const observer = new MutationObserver(() => {
+//     const elements = document.querySelectorAll(".cards-container .card");
+//     console.log(elements); // This gets the updated NodeList
+// });
+// observer.observe(document.body, { childList: true, subtree: true });
+
+
+async function filterWorksCards(items){
+  const filterBtns = document.querySelectorAll('.filter-button');
+  
+  
+    
+    filterBtns.forEach(btn => btn.addEventListener('click', ()=>{
+      items.forEach((item)=>{
+         if(item.dataset.category == btn.dataset.id){
+          item.style.display = 'block'
+          item.classList.add('fade-in-card')
+          setTimeout(()=>{
+            item.classList.remove('fade-in-card')
+          }, 1000)
+        }else if(btn.dataset.id=='All'){
+           item.style.display = 'block'
+        }else{
+          item.style.display = 'none'
+        }
+      })
+       
+      
+    }))
+  
+  
+
+}
+
+
+  
+ 
+
+
+
+
+
+

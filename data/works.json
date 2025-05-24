@@ -7,10 +7,11 @@
             "../images/booki-sm.webp",
             "../images/booki-bottom.webp"
         ],
+        "category":"front",
         "tags":[
-          "HTML 5 ", "CSS"
+          "HTML 5 ", "CSS 3"
         ],
-        "ghLink"  : "https://github.com"
+        "ghLink"  : "https://github.com/ChafaaDev/Booki.git"
     },
       {
         "id":2,
@@ -20,10 +21,11 @@
             "../images/sb_modal.webp",
             "../images/booki-bottom.webp"
         ],
+        "category":"front",
         "tags":[
           "HTML 5 ", "CSS", "Node.js", "RESTFUL API"
         ],
-        "ghLink"  : "https://github.com"
+        "ghLink"  : "https://github.com/ChafaaDev/Portfolio_Sophie_Bluel.git"
     },
       {
         "id":3,
@@ -33,24 +35,26 @@
             "./images/kasa-sm.webp",
             "./images/kasa_about.webp"
         ],
+        "category":"front",
         "tags":[
-          "HTML 5 ", "CSS"
+          "React", "Scss"
         ],
-        "ghLink"  : "https://github.com"
+        "ghLink"  : "https://github.com/ChafaaDev/Kasa.git"
     },
       {
         "id":4,
         "title":"Nina Carducci",
         "cover" : "../images/nina.webp",
          "snapShots":[
-            {"url":"./images/kasa-sm.webp"},
-            {"url":"./images/booki-bottom.webp"}
+            "./images/kasa-sm.webp",
+            "./images/booki-bottom.webp"
         ],
         "description":"Optimisation du site de la photographe Nina Carducci",
         "tags":[
           "HTML 5 ", "CSS" , "SEO", "JQuery"
         ],
-        "ghLink"  : "https://github.com"
+        "category":"seo",
+        "ghLink"  : "https://github.com/ChafaaDev/Nina-Carducci.git"
     },
       {
         "id":5,
@@ -60,22 +64,24 @@
             "./images/kasa-sm.webp",
             "./images/booki-bottom.webp"
         ],
+        "category":"backend",
         "tags":[
           "HTML 5 ", "CSS"
         ],
-        "ghLink"  : "https://github.com"
+        "ghLink"  : "https://github.com/ChafaaDev/P7-Dev-Web-livres.git"
     },
           {
         "id":6,
-        "title":"Kasa",
-        "cover" : "../images/kasa-home.jpeg",
+        "title":"San Fransisco Cofee",
+        "cover" : "../images/coffee.webp",
          "snapShots":[
-            "./images/kasa-sm.webp",
+            "./images/clogin.webp",
             "./images/kasa_about.webp"
         ],
+        "category":"fullstack",
         "tags":[
-          "HTML 5 ", "CSS"
+          "React", "CSS", "MongoDb"
         ],
-        "ghLink"  : "https://github.com"
+        "ghLink"  : "https://github.com/ChafaaDev/S_Fransisco-Cafe.git"
     }
 ]
