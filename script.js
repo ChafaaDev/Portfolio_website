@@ -5,14 +5,13 @@ function toggleTheme() {
     const body = document.querySelector("body");
     if (body.dataset.bsTheme == "dark") {
       body.dataset.bsTheme = "light";
-      // body.style.backgroundColor ='#ffffff8e'
+      body.style.backgroundColor ='#ffffff8e';
      
       themeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
     } else {
       body.dataset.bsTheme = "dark";
-      // body.style.backgroundImage = 'url("./images/developer-8829735_1920.jpg")'
+      body.style.backgroundImage = 'linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))';
       themeBtn.innerHTML = '<i class="bi bi-brightness-high"></i>';
-      // document.querySelector('main').style.backgroundColor = '#ffff'
     }
   };
 }
@@ -23,12 +22,12 @@ function createWorksCards(works){
     const element = works[i]
     const workCard = document.createElement('div')
     workCard.innerHTML = `
-  <img src=${element.cover} class="card-img-top img-fluid" alt=${element.getElementById}>
+  <img src=${element.cover} class="card-img-top img-fluid" alt=${element.title} height="300">
   <div class="card-body">
     <h5 class="card-title">${element.title}</h5>
-    <p class="card-text">${element.tags.join(' ')}</p>
+    <ul class="card-text">${element.tags.map(tag=>`<li class="badge text-bg-danger">${tag}</li>`).join('')}</ul>
     <a href=${element.ghLink} class="btn btn-primary">View on Github</a>
-    <button class="btn btn-secondary" id="seeMoreBtn" onclick="canvasoOn('${element.title}','${element.snapShots}')">See more</button>
+    <button class="btn btn-secondary" id="seeMoreBtn" onclick="canvasoOn('${element.title}', '${element.snapShots.url}')">See more</button>
   </div>
 `
 workCard.classList.add('card')
@@ -51,12 +50,24 @@ function createSkillsCard(cards){
     const element = cards[i];
     const skillCard = document.createElement('div');
     skillCard.classList.add('skill-card')
+    skillCard.setAttribute('data-lag',element.id.toString())
     const cardPic = document.createElement('img')
     cardPic.src = element.icon;
-    cardPic.setAttribute('height', '200');
+    cardPic.setAttribute('height', '100');
     const cardTitle = document.createElement('h6');
     cardTitle.textContent = element.title;
-    skillCard.append(cardPic, cardTitle)
+    const progressBarWrapper = document.createElement('div');
+    progressBarWrapper.classList.add('progress')
+    progressBarWrapper.style.width="100%";
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar')
+    progressBar.classList.add('progress-bar-animated')
+    progressBar.classList.add('progress-bar-striped')
+    progressBar.style.width = element.level.toString();
+    progressBar.style.backgroundColor = (progressBar.style.width < '50 %') ? ('rgba(231, 43, 43, 0.716)'): ('green');
+    progressBar.textContent = element.level
+    progressBarWrapper.appendChild(progressBar)
+    skillCard.append(cardPic, cardTitle, progressBarWrapper);
     document.querySelector('#skills .skills-container').appendChild(skillCard)
   }
 }
@@ -68,88 +79,57 @@ async function fetchSkillCards(){
   })
 }
 fetchSkillCards()
-// fetchSkillCards()
+
  
-  //   const canvasoOn = (title,cover, elements)=>{
-  //   document.querySelector('.offcanvas-title').textContent = title;
-  //   document.querySelector('.offcanvas-body').innerHTML = `<div>
-  //   <figure class='figure' style='height:600px; width:100%;'>
-  //    <img src=${cover} alt=${title} style='height:auto; width:100%; object-fit:cover;object-position:top;'/>
-  //   </figure> 
-  //   <div class="tags-list">${createAList(elements)}</div> 
-  //   </div>`
-  //   const bsOffcanvas = new bootstrap.Offcanvas('#myOffcanvas')
-  //   bsOffcanvas.show()                                                                           
-  // }
-  const canvasoOn = (title, shots) =>{
-    document.querySelector('.offcanvas-title').textContent = title;
-    shots = []
-    for(let i = 0 ; i < shots.length; i++){
-      const element = shots[i];
-        figure= ` <div class="container text-center">
-        <div class="row g-2">
-               <div class="p-3"><img class="img-fluid" src=${element} height="400"/></div><div class="col-6"></div></div>
- 
+  const canvasoOn = (title, items) =>{
+   const titleEl = document.querySelector('.offcanvas-title');
+  const bodyEl = document.querySelector('.offcanvas-body');
+
+  if (!titleEl || !bodyEl) {
+    console.warn('Offcanvas elements not found');
+    return;
+  }
+
+  titleEl.textContent = title;
+
+  // Create HTML for the gallery
+  const galleryHTML = [items]
+    .map((item) => {
+      return `
+        <div class="col-6 col-md-4 mb-3">
+          <img src="${item.url}" class="img-fluid rounded shadow-sm" alt="Gallery Image" />
         </div>
-      </div>`
-      document.querySelector('.offcanvas-body').innerHTML= figure;
-    }
-    
-    // document.querySelector('.offcanvas-body').innerHTML =
-    //  `<div class="container text-center"><div class="row g-2">
-    //  ${[shots].map((item)=>
-    //   `<div class="p-3"><img class="img-fluid" src="${item}" height="400"/></div><div class="col-6">`).join('')}</div></div>`
-       
-    
-    // <div class="container text-center">
-    //   <div class="row g-2">
-    //     <div class="col-6">
-    //       <div class="p-3">Custom column padding</div>
-    //     </div>
-    //     <div class="col-6">
-    //       <div class="p-3">Custom column padding</div>
-    //     </div>
-    //     <div class="col-6">
-    //       <div class="p-3">Custom column padding</div>
-    //     </div>
-    //     <div class="col-6">
-    //       <div class="p-3">Custom column padding</div>
-    //     </div>
-    //   </div>
-    // </div>`
+      `;
+    })
+    .join('');
+
+  // Wrap in a row
+  bodyEl.innerHTML = `<div class="row">${galleryHTML}</div>`;
     const bsOffcanvas = new bootstrap.Offcanvas('#myOffcanvas')
     bsOffcanvas.show() 
   }
-  
-
-function createAList(items){
-  const offcanvas = document.getElementById('myOffcanvas')
-  offcanvas.addEventListener('show.bs.offcanvas', ()=>{
-    let list = document.querySelector('.tags-list')
-     items = [];
- list.innerHTML = `${items.map(item=>`<span class="badge text-bg-info">${item}</span>`).join('')}`
+ 
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger,ScrollSmoother)
+  let smoother = ScrollSmoother.create({
+  wrapper:"#smooth-wrapper",
+  content:"#smooth-content",
+  smooth:1.5,
+  effects:true,
+  start:0,
+  end:200,
   })
-  
-}
-const backToTopBtn = document.getElementById('backToTopBtn')
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY > 300){
-    backToTopBtn.style.display = 'block';
-  }else{
-     backToTopBtn.style.display = 'none';
-  }
+  //  document.querySelectorAll("a[href^='#']").forEach(anchor=>{
+  //   anchor.addEventListener('click', (e)=>{
+  //     e.preventDefault();
+  //     const targetId = e.target.getAttribute('href');
+  //     const targetEl = document.querySelector(targetId);
+  //           gsap.to(smoother,{
+  //             scrollTop:smoother.offset(targetEl, "top top"),
+  //             duration:1.5
+  //           })
+          
+  //   })
+   
+  // })
 })
-backToTopBtn.onclick = (e)=>{
-  e.preventDefault();
-  scrollTo({
-    top:0,
-    behavior:'smooth'
-  })
-}
-document.getElementById('goToBottom').onclick = (e)=>{
-  e.preventDefault();
-  scrollTo({
-    bottom:0,
-    behavior:'smooth'
-  })
-}

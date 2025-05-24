@@ -2,7 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-$primary-color: #ff9142;
+$primary-color: #da192cdb;
 $secondary-color: rgba(248, 26, 26, 0.842);
 $first-font: "Syne", sans-serif;
 $second-font: "Share Tech", sans-serif;
@@ -10,11 +10,11 @@ $font-color-black: black;
 $font-color-white: #fff;
 $fw-title: 900;
 
-@mixin display-column($gap) {
+@mixin display-column($gap,$a-items) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: $a-items;
   gap:$gap;
 }
 @mixin flex-row($width, $j-c: center, $font-stack, $padding: 0) {
@@ -42,7 +42,7 @@ $fw-title: 900;
   background-color: $bg;
   font-family: $font-stack;
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: .5em;
   transition: box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 20px transparent;
   &:hover {
@@ -56,25 +56,46 @@ $fw-title: 900;
 }
 @mixin section-title{
       padding:.5em;
-      // width: 100%;
-      text-align: center;
-      // border-bottom: 4px solid $primary-color;
+      padding: 0;
+      margin: 0;
+      font-weight: 700;
+      font-family:$first-font;
 }
-body {
-  // @include display-column(1em);
-  font-family: $first-font;
+@mixin section-border{
+  border-top: 4px solid; /* thickness */
+  border-image: linear-gradient(to right, rgba(191, 35, 35, 0.833) 0%,#ffff, transparent 100%);
+  border-image-slice: 1;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+body{
+  @include display-column(2em, center);
+  // font-family: $first-font;
   background-image: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+  background-size: cover;
+  background-repeat: no-repeat;
   padding:0;
+  overscroll-behavior: none;
+  overflow: auto;
 }
-main {
-  @include display-column(5em);
-  // padding: 2em 0em;
+main{
+  @include display-column(3em, center);
+  width:90%;
+  padding: 2em 0;
+  // overflow: hidden;
+  // background-image: url('../images/developer-8829735_1920.webp');
+  // background-position: center;
+  // background-attachment: fixed;
+  // background-repeat: no-repeat;
+  // background-color: #0b0a0ade;
+  // background-blend-mode: darken;
+  border-radius: 10px;
   margin: auto;
-  // background-color: #232121e2;
-  margin: auto;
-  width: 100%;
-  // box-shadow: inset 0 1px 15px rgba(black, .075);
-  // border-radius: 1em;
+
 }
 header {
   // @include display-column(1em);
@@ -104,20 +125,19 @@ header {
 
 .hero-section {
   // @include flex-row(100%,center, $second-font, 1em 2em);
-  @include display-column(2em);
+  @include display-column(2em,center);
   // background-image: linear-gradient(to right, #434343 0%, black 100%);
   // @include flex-row(100%, center, $second-font );
-     background-image: url('../images/developer-8829735_1920.webp');
+    background-image: url('../images/developer-8764523.webp');
     background-size: cover;
     background-position:center;
     background-attachment: fixed;
-    border-radius: 1em;
     background-color: rgba(0, 0, 0, 0.728);
     background-blend-mode: darken;
-  width: 100%;
-  padding: 0;
+    width: 100%;
+    padding: 1em;
   .hero-section-container {
-    @include display-column(3em);
+    @include display-column(3em, center);
     // background-image: url('../images/developer-8829735_1920.webp');
     // background-size: cover;
     // background-position:center;
@@ -128,7 +148,7 @@ header {
     width: 100%;
     padding: 1em;
     .hero-section-subtext {
-      @include display-column(2em);
+      @include display-column(2em, center);
       width: 100%;
       font-weight:600;
       font-size: 1.6em;
@@ -146,17 +166,15 @@ header {
   text-decoration: none;
   color: $font-color-white;
   font-size: 1.1em;
+  padding: .5em 2em;
 }
 #about {
-    @include display-column(1em);
+    @include display-column(1em, center);
   .about-container{
     @include flex-row(100%, center, $second-font, 0);
-    border: none;
     gap: 0em;
-    box-shadow: 2px 2px 15px rgba(190, 60, 60, 0.545);
-    border-radius: 1em;
     & .about-me-text {
-      @include display-column(1em);
+      @include display-column(1em,center);
       font-family: $first-font;
       padding: 1em;
       // border-radius: 2em;
@@ -180,7 +198,7 @@ header {
   }
 }
 .links-to-follow {
-  @include display-column(1em);
+  @include display-column(1em, center);
   margin-block: 3em;
   .links-container {
     .links-list {
@@ -201,23 +219,24 @@ h2 {
   font-family: $second-font;
 }
 .my-works{
-    @include display-column(1em);
+    @include display-column(1em, center);
     box-sizing: border-box;
+    padding: 0;
     h2{
       @include section-title();
     }
 .cards-container{
-    @include flex-row(100%, center, $first-font);
+    @include flex-row(100%, space-between, $first-font);
+    // border-top: 4px solid $primary-color;
     flex-wrap: wrap;
     gap: 1em;
     box-sizing: border-box;
-    box-shadow: 2px 2px 10px rgba(190, 60, 60, 0.792);
-   border-radius: 1em;
-   padding: 2em 1em;
+    padding:2em;
     .card{
-        height:400px;
+        height:425px;
         width: 300px;
         box-sizing: border-box;
+        @include display-column(1em,start);
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
         flex-basis: 30%;
        .card-img-top{
@@ -226,67 +245,102 @@ h2 {
             object-fit: cover;
             object-position: top;
         }
+        ul{
+          list-style: none;
+          @include flex-row(100%, start, $first-font, );
+          gap: 1em;
+        }
     }
 }
 }
 #skills{
-  @include display-column(1em);
+  @include display-column(1em, center);
+  width: 100%;
   .skills-container{
-    @include flex-row(100%, center, $second-font);
+    // @include flex-row(100%, center, $second-font);
+    width: 100%;
+    display: flex;
+    // grid:auto/repeat(2,1fr);
+   
       flex-wrap: wrap;
+      padding: 1em;
      gap: 1em;
     .skill-card{
-      height: 130px;
-      width: 100px;
-      @include display-column(1em);
-      box-shadow: 5px 5px 10px #5e5b5bbc;
+      height: 150px;
+      width: 300px;
+      @include display-column(1em, center);
+      box-shadow: 5px 5px 10px #3a3838bc;
       padding: 1em;
-      box-sizing: border-box;
       img{
-        height:auto;
+        height:40%;
         object-fit: cover;
-        width: 100%;
-        object-position:center;
+        width: auto;
       }
     }
   }
-  
   h2{
     @include section-title();
   }
   
 }
-.services{
-  margin-top: 2em;
-  @include display-column(1em);
-  padding: 1em;
+#services{
+  @include display-column(2em, center);
+  padding: 0;
   width: 100%;
-  box-sizing: border-box;
-  .container{
-   display: flex;
-   box-sizing: border-box;
-    gap: .5em;
+  padding: 0;
+  margin: 0;
+  .services-container{
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
     width: 100%;
-    padding: 1em;
+    gap: 1em;
+    padding: 2em 0;
+    margin: 0;
     .card{
-      height: 150px;
-      padding: 1em;
-      width: 300px;
+      height: 200px;
+      text-align: center;
+      width: auto;
       background-color: #0a0a0a95;
       border: none;
-      @include display-column(1em);
+      @include display-column(1em, center);
       justify-content: center;
-      flex:1 1 auto;
+      // flex:1 1 auto;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       transition: transform .2s ease-in;
       flex-basis: 20%;
       h4{
         font-family: $second-font;
-        font-size: 1.2em;
+        font-size: 1.5em;
       }
       &:hover{
         transform: translate(0,-.5em);
       }
+      i{
+        color:rgba(255, 0, 0, 0.519);
+      }
     }
   }
+}
+.section-title{
+  @include section-title();
+}
+#smooth-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+#smooth-content {
+  min-height: 100vh;
+  overflow: auto;
+  width: 100%;
+  will-change: transform;
+}
+#contactBtn{
+ background-color: transparent;
+ border: none;
 }

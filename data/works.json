@@ -41,11 +41,12 @@
       {
         "id":4,
         "title":"Nina Carducci",
-        "cover" : "../images/booki.webp",
+        "cover" : "../images/nina.webp",
          "snapShots":[
-            "./images/kasa-sm.webp",
-            "./images/booki-bottom.webp"
+            {"url":"./images/kasa-sm.webp"},
+            {"url":"./images/booki-bottom.webp"}
         ],
+        "description":"Optimisation du site de la photographe Nina Carducci",
         "tags":[
           "HTML 5 ", "CSS" , "SEO", "JQuery"
         ],
@@ -54,7 +55,7 @@
       {
         "id":5,
         "title":"Mon vieux Grimoire",
-        "cover" : "../images/booki.webp",
+        "cover" : "../images/vgrim.png",
          "snapShots":[
             "./images/kasa-sm.webp",
             "./images/booki-bottom.webp"
@@ -65,7 +66,7 @@
         "ghLink"  : "https://github.com"
     },
           {
-        "id":3,
+        "id":6,
         "title":"Kasa",
         "cover" : "../images/kasa-home.jpeg",
          "snapShots":[

@@ -3,51 +3,73 @@
     {
         "id":1,
         "title": "HTML",
-        "icon":"./data/html.png",
-        "description":""
+        "icon":"./data/html.webp",
+        "description":"",
+        "level":"95%"
     },
       {
         "id":2,
         "title": "Javascript",
-        "icon":"./data/js.png",
-        "description":""
+        "icon":"./data/js.webp",
+        "description":"",
+        "level":"70%"
     },
       {
         "id":3,
         "title": "CSS",
-        "icon":"./data/css.png",
-        "description":""
+        "icon":"./data/css.webp",
+        "description":"",
+         "level":"90%"
     },
       {
         "id":4,
         "title": "React.js",
-        "icon":"./data/react.png",
-        "description":""
+        "icon":"./data/react.webp",
+        "description":"",
+         "level":"70%"
     },
       {
         "id":5,
         "title": "Node.js",
-        "icon":"./data/node.png",
-        "description":""
+        "icon":"./data/node.webp",
+        "description":"",
+         "level":"70%"
     }, 
      {
         "id":6,
         "title": "SEO",
-        "icon":"./data/seo.png",
-        "description":""
+        "icon":"./data/seo.webp",
+        "description":"",
+         "level":"95%"
     },
      {
         "id":7,
         "title": "Bootstrap",
-        "icon":"./data/bootstrap.png",
-        "description":""
+        "icon":"./data/bstp.png",
+        "description":"",
+         "level":"60%"
     },
    
       {
         "id":8,
         "title": "MongoDB",
-        "icon":"./data/dbase.png",
-        "description":""
+        "icon":"./data/dbase.webp",
+        "description":"",
+         "level":"50%"
+    },
+         {
+        "id":9,
+        "title": "Sass",
+        "icon":"./data/sass.webp",
+        "description":"",
+         "level":"70%"
+    },
+            {
+        "id":9,
+        "title": "Next.js",
+        "icon":"./data/nextjs.png",
+        "description":"",
+         "level":"35%"
     }
     
 ]

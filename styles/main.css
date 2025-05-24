@@ -1,9 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech&family=Syne:wght@400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-body {
-  font-family: "Syne", sans-serif;
-  background-image: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+* {
   padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  background-image: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  overscroll-behavior: none;
+  overflow: auto;
 }
 
 main {
@@ -11,10 +24,11 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 5em;
+  gap: 3em;
+  width: 90%;
+  padding: 2em 0;
+  border-radius: 10px;
   margin: auto;
-  margin: auto;
-  width: 100%;
 }
 
 header {
@@ -68,15 +82,14 @@ header .navbar .nav-links .nav-link a {
   justify-content: space-between;
   align-items: center;
   gap: 2em;
-  background-image: url("../images/developer-8829735_1920.webp");
+  background-image: url("../images/developer-8764523.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  border-radius: 1em;
   background-color: rgba(0, 0, 0, 0.728);
   background-blend-mode: darken;
   width: 100%;
-  padding: 0;
+  padding: 1em;
 }
 .hero-section .hero-section-container {
   display: flex;
@@ -106,19 +119,20 @@ header .navbar .nav-links .nav-link a {
 }
 
 .contact-link {
-  background-color: #ff9142;
+  background-color: rgba(218, 25, 44, 0.8588235294);
   font-family: "Share Tech", sans-serif;
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   transition: box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 20px transparent;
   font-weight: 700;
   text-decoration: none;
   color: #fff;
   font-size: 1.1em;
+  padding: 0.5em 2em;
 }
 .contact-link:hover {
-  box-shadow: 0 0 20px #ff9142;
+  box-shadow: 0 0 20px rgba(218, 25, 44, 0.8588235294);
 }
 
 #about {
@@ -135,10 +149,7 @@ header .navbar .nav-links .nav-link a {
   width: 100%;
   padding: 0;
   font-family: "Share Tech", sans-serif;
-  border: none;
   gap: 0em;
-  box-shadow: 2px 2px 15px rgba(190, 60, 60, 0.545);
-  border-radius: 1em;
 }
 #about .about-container .about-me-text {
   display: flex;
@@ -162,17 +173,17 @@ header .navbar .nav-links .nav-link a {
   margin: auto;
 }
 #about .about-container .about-me-text .resume-link {
-  background-color: #ff9142;
+  background-color: rgba(218, 25, 44, 0.8588235294);
   font-family: "Share Tech", sans-serif;
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   transition: box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 20px transparent;
   text-decoration: none;
   color: #fff;
 }
 #about .about-container .about-me-text .resume-link:hover {
-  box-shadow: 0 0 20px #ff9142;
+  box-shadow: 0 0 20px rgba(218, 25, 44, 0.8588235294);
 }
 
 .links-to-follow {
@@ -222,14 +233,18 @@ h2 {
   align-items: center;
   gap: 1em;
   box-sizing: border-box;
+  padding: 0;
 }
 .my-works h2 {
   padding: 0.5em;
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-family: "Syne", sans-serif;
 }
 .my-works .cards-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0;
@@ -237,14 +252,17 @@ h2 {
   flex-wrap: wrap;
   gap: 1em;
   box-sizing: border-box;
-  box-shadow: 2px 2px 10px rgba(190, 60, 60, 0.792);
-  border-radius: 1em;
-  padding: 2em 1em;
+  padding: 2em;
 }
 .my-works .cards-container .card {
-  height: 400px;
+  height: 425px;
   width: 300px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1em;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   flex-basis: 30%;
 }
@@ -254,6 +272,16 @@ h2 {
   object-fit: cover;
   object-position: top;
 }
+.my-works .cards-container .card ul {
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  font-family: "Syne", sans-serif;
+  gap: 1em;
+}
 
 #skills {
   display: flex;
@@ -261,62 +289,63 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 1em;
+  width: 100%;
 }
 #skills .skills-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  padding: 0;
-  font-family: "Share Tech", sans-serif;
+  display: flex;
   flex-wrap: wrap;
+  padding: 1em;
   gap: 1em;
 }
 #skills .skills-container .skill-card {
-  height: 130px;
-  width: 100px;
+  height: 150px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
-  box-shadow: 5px 5px 10px rgba(94, 91, 91, 0.737254902);
+  box-shadow: 5px 5px 10px rgba(58, 56, 56, 0.737254902);
   padding: 1em;
-  box-sizing: border-box;
 }
 #skills .skills-container .skill-card img {
-  height: auto;
+  height: 40%;
   object-fit: cover;
-  width: 100%;
-  object-position: center;
+  width: auto;
 }
 #skills h2 {
   padding: 0.5em;
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-family: "Syne", sans-serif;
 }
 
-.services {
-  margin-top: 2em;
+#services {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 1em;
-  padding: 1em;
+  gap: 2em;
+  padding: 0;
   width: 100%;
-  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-.services .container {
+#services .services-container {
+  justify-content: center;
   display: flex;
   box-sizing: border-box;
-  gap: 0.5em;
   width: 100%;
-  padding: 1em;
+  gap: 1em;
+  padding: 2em 0;
+  margin: 0;
 }
-.services .container .card {
-  height: 150px;
-  padding: 1em;
-  width: 300px;
+#services .services-container .card {
+  height: 200px;
+  text-align: center;
+  width: auto;
   background-color: rgba(10, 10, 10, 0.5843137255);
   border: none;
   display: flex;
@@ -325,17 +354,48 @@ h2 {
   align-items: center;
   gap: 1em;
   justify-content: center;
-  flex: 1 1 auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transition: transform 0.2s ease-in;
   flex-basis: 20%;
 }
-.services .container .card h4 {
+#services .services-container .card h4 {
   font-family: "Share Tech", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
-.services .container .card:hover {
+#services .services-container .card:hover {
   transform: translate(0, -0.5em);
+}
+#services .services-container .card i {
+  color: rgba(255, 0, 0, 0.519);
+}
+
+.section-title {
+  padding: 0.5em;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-family: "Syne", sans-serif;
+}
+
+#smooth-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+#smooth-content {
+  min-height: 100vh;
+  overflow: auto;
+  width: 100%;
+  will-change: transform;
+}
+
+#contactBtn {
+  background-color: transparent;
+  border: none;
 }
 
 /*# sourceMappingURL=main.css.map */
