@@ -5,7 +5,8 @@
   margin: 0;
 }
 
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
 
@@ -78,6 +79,12 @@ header .navbar .nav-links .nav-link a {
   color: inherit;
   font-size: 1.5em;
   font-weight: 600;
+}
+header .navbar .nav-links .nav-link a:hover {
+  color: rgba(218, 25, 44, 0.8588235294);
+}
+header .navbar .nav-links .nav-link a:hover:active {
+  color: rgb(220, 70, 70);
 }
 
 .hero-section {
@@ -248,7 +255,7 @@ h2 {
 }
 .my-works .cards-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 0;
@@ -259,8 +266,8 @@ h2 {
   padding: 2em;
 }
 .my-works .cards-container .card {
-  height: 425px;
-  width: 400px;
+  height: 25rem;
+  width: 20rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -298,6 +305,7 @@ h2 {
 #skills .skills-container {
   width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 1em;
   gap: 1em;
@@ -428,6 +436,15 @@ h2 {
 .filter-buttons .filter-button:hover {
   box-shadow: 0 0 20px rgba(218, 25, 44, 0.8588235294);
 }
+.filter-buttons .filter-control-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.filter-buttons .filter-control-btn i {
+  color: rgba(248, 26, 26, 0.842);
+}
 
 .card {
   box-sizing: border-box;
@@ -442,7 +459,7 @@ h2 {
   }
 }
 .fade-in-card {
-  animation: fade-in 1s linear;
+  animation: fade-in 0.5s linear;
 }
 
 /*# sourceMappingURL=main.css.map */

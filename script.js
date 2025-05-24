@@ -29,7 +29,6 @@ function createWorksCards(works){
     <h5 class="card-title">${element.title}</h5>
     <ul class="card-text">${element.tags.map(tag=>`<li class="badge text-bg-danger">${tag}</li>`).join('')}</ul>
     <a href=${element.ghLink} class="btn btn-primary">View on Github</a>
-    <button class="btn btn-secondary" id="seeMoreBtn" onclick="canvasoOn('${element.title}', '${element.snapShots.url}')">See more</button>
   </div>
 `
 
@@ -125,41 +124,29 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault()
       const targetId = e.target.getAttribute('href');
       const targetEl = document.querySelector(targetId);
-            gsap.to(smoother,{
-              scrollTop:smoother.offset(targetEl, "top top"),
-              duration:1.5,
-              ease:'Back.out'
-            })
-          
+      smoother.scrollTo(targetEl, true, 'center center')
     })
    
   })
-  
 });
 
-
-// const observer = new MutationObserver(() => {
-//     const elements = document.querySelectorAll(".cards-container .card");
-//     console.log(elements); // This gets the updated NodeList
-// });
-// observer.observe(document.body, { childList: true, subtree: true });
-
-
-async function filterWorksCards(items){
+function filterWorksCards(items){
   const filterBtns = document.querySelectorAll('.filter-button');
-  
-  
-    
-    filterBtns.forEach(btn => btn.addEventListener('click', ()=>{
+  filterBtns.forEach(btn => btn.addEventListener('click', ()=>{
       items.forEach((item)=>{
          if(item.dataset.category == btn.dataset.id){
           item.style.display = 'block'
           item.classList.add('fade-in-card')
+          btn.classList.add('active')
           setTimeout(()=>{
             item.classList.remove('fade-in-card')
           }, 1000)
         }else if(btn.dataset.id=='All'){
            item.style.display = 'block'
+           item.classList.add('fade-in-card')
+          setTimeout(()=>{
+            item.classList.remove('fade-in-card')
+          }, 1000)
         }else{
           item.style.display = 'none'
         }
@@ -167,9 +154,6 @@ async function filterWorksCards(items){
        
       
     }))
-  
-  
-
 }
 
 

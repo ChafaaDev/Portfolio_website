@@ -1,21 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech&family=Syne:wght@400..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&family=Syne:wght@400..800&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 $primary-color: #da192cdb;
 $secondary-color: rgba(248, 26, 26, 0.842);
-$first-font: "Syne", sans-serif;
-$second-font: "Share Tech", sans-serif;
+$first-font: 'Syne', sans-serif;
+$second-font: 'Share Tech', sans-serif;
 $font-color-black: black;
 $font-color-white: #fff;
 $fw-title: 900;
+$btn-hover-bg-shade-amount:15%;
 
-@mixin display-column($gap,$a-items) {
+@mixin display-column($gap, $a-items) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: $a-items;
-  gap:$gap;
+  gap: $gap;
 }
 @mixin flex-row($width, $j-c: center, $font-stack, $padding: 0) {
   display: flex;
@@ -25,11 +26,11 @@ $fw-title: 900;
   padding: $padding;
   font-family: $font-stack;
 }
-@mixin links-layout($font-stack, $j-c:c) {
+@mixin links-layout($font-stack, $j-c: c) {
   font-family: $font-stack;
   list-style: none;
   display: flex;
-  justify-content:$j-c;
+  justify-content: $j-c;
   padding: 0;
   gap: 1rem;
   align-items: center;
@@ -42,7 +43,7 @@ $fw-title: 900;
   background-color: $bg;
   font-family: $font-stack;
   padding: 0.5em 1em;
-  border-radius: .5em;
+  border-radius: 0.5em;
   transition: box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 20px transparent;
   &:hover {
@@ -54,114 +55,111 @@ $fw-title: 900;
   font-weight: $f-weight;
   font-size: $f-size;
 }
-@mixin section-title{
-      padding:.5em;
-      padding: 0;
-      margin: 0;
-      font-weight: 700;
-      font-family:$first-font;
+@mixin section-title {
+  padding: 0.5em;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-family: $first-font;
 }
-@mixin section-border{
+@mixin section-border {
   border-top: 4px solid; /* thickness */
-  border-image: linear-gradient(to right, rgba(191, 35, 35, 0.833) 0%,#ffff, transparent 100%);
+  border-image: linear-gradient(
+    to right,
+    rgba(191, 35, 35, 0.833) 0%,
+    #ffff,
+    transparent 100%
+  );
   border-image-slice: 1;
 }
-*{
+* {
   padding: 0;
   margin: 0;
 }
-body, html{
+body,
+html {
   overflow-x: hidden;
 }
 
-body{
+body {
   @include display-column(2em, center);
   // font-family: $first-font;
-  background-image: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+  background-image: linear-gradient(
+    to right,
+    rgb(55, 65, 81),
+    rgb(17, 24, 39),
+    rgb(0, 0, 0)
+  );
   background-size: cover;
   background-repeat: no-repeat;
-  padding:0;
+  padding: 0;
   overscroll-behavior: none;
-  
+
   height: 100vh;
 }
-main{
+main {
   @include display-column(3em, center);
-  width:90%;
+  width: 90%;
   padding: 2em 0;
-  // overflow: hidden;
-  // background-image: url('../images/developer-8829735_1920.webp');
-  // background-position: center;
-  // background-attachment: fixed;
-  // background-repeat: no-repeat;
-  // background-color: #0b0a0ade;
-  // background-blend-mode: darken;
   border-radius: 10px;
   margin: auto;
-
 }
 header {
-  // @include display-column(1em);
-  @include flex-row(100%,space-between, $first-font, );
+  @include flex-row(100%, space-between, $first-font);
   padding: 1em 0;
   margin: 0;
   width: 100%;
   .navbar {
-  @include flex-row(100%,center, $first-font, 1em);
-  width: 100%;
-   .nav-links {
+    @include flex-row(100%, center, $first-font, 1em);
+    width: 100%;
+    .nav-links {
       @include links-layout($first-font);
       justify-content: end;
-      & #themeBtn {
+      #themeBtn {
         background-color: transparent;
         border: none;
       }
-      & .nav-link a {
+      .nav-link a {
         text-decoration: none;
         color: inherit;
         font-size: 1.5em;
         font-weight: 600;
+        &:hover{
+         color: $primary-color;
+        &:active{
+          color: rgb(220, 70, 70);
+        }
+        }
       }
     }
   }
 }
 
 .hero-section {
-  // @include flex-row(100%,center, $second-font, 1em 2em);
-  @include display-column(2em,center);
-  // background-image: linear-gradient(to right, #434343 0%, black 100%);
-  // @include flex-row(100%, center, $second-font );
-    background-image: url('../images/developer-8764523.webp');
-    background-size: cover;
-    background-position:center;
-    background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.728);
-    background-blend-mode: darken;
-    width: 100%;
-    padding: 1em;
+  @include display-column(2em, center);
+  background-image: url('../images/developer-8764523.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.728);
+  background-blend-mode: darken;
+  width: 100%;
+  padding: 1em;
   .hero-section-container {
     @include display-column(3em, center);
-    // background-image: url('../images/developer-8829735_1920.webp');
-    // background-size: cover;
-    // background-position:center;
-    // background-attachment: fixed;
-    // border-radius: 2em;
-    // background-color: rgba(0, 0, 0, 0.728);
-    // background-blend-mode: darken;
     width: 100%;
     padding: 1em;
     .hero-section-subtext {
       @include display-column(2em, center);
       width: 100%;
-      font-weight:600;
+      font-weight: 600;
       font-size: 1.6em;
       font-family: $second-font;
     }
   }
- 
 }
 .hero-section-title {
-  @include main-title($second-font, 900, 5em);  
+  @include main-title($second-font, 900, 5em);
 }
 .contact-link {
   @include button-style($primary-color, $second-font);
@@ -169,15 +167,15 @@ header {
   text-decoration: none;
   color: $font-color-white;
   font-size: 1.1em;
-  padding: .5em 2em;
+  padding: 0.5em 2em;
 }
 #about {
-    @include display-column(1em, center);
-  .about-container{
+  @include display-column(1em, center);
+  .about-container {
     @include flex-row(100%, center, $second-font, 0);
     gap: 0em;
     & .about-me-text {
-      @include display-column(1em,center);
+      @include display-column(1em, center);
       font-family: $first-font;
       padding: 1em;
       // border-radius: 2em;
@@ -186,7 +184,7 @@ header {
         @include main-title($second-font, 900, 4em);
         // padding: 1em;
       }
-      .quote-text{
+      .quote-text {
         font-size: 1.2em;
         padding: 1em;
         width: 90%;
@@ -221,78 +219,75 @@ a {
 h2 {
   font-family: $second-font;
 }
-.my-works{
-    @include display-column(1em, center);
-    box-sizing: border-box;
-    padding: 0;
-    h2{
-      @include section-title();
-    }
-.cards-container{
-    @include flex-row(100%, space-between, $first-font);
-    // border-top: 4px solid $primary-color;
+.my-works {
+  @include display-column(1em, center);
+  box-sizing: border-box;
+  padding: 0;
+  h2 {
+    @include section-title();
+  }
+  .cards-container {
+    @include flex-row(100%, center, $first-font);
     flex-wrap: wrap;
     gap: 1em;
     box-sizing: border-box;
-    padding:2em;
-    .card{
-        height:425px;
-        width: 400px;
-        box-sizing: border-box;
-        @include display-column(1em,start);
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-        box-sizing: border-box;
-       .card-img-top{
-            height: 65%;
-            width: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-        ul{
-          list-style: none;
-          @include flex-row(100%, start, $first-font, );
-          gap: 1em;
-        }
+    padding: 2em;
+    .card {
+      height: 25rem;
+      width: 20rem;
+      box-sizing: border-box;
+      @include display-column(1em, start);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      box-sizing: border-box;
+      .card-img-top {
+        height: 65%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      ul {
+        list-style: none;
+        @include flex-row(100%, start, $first-font);
+        gap: 1em;
+      }
     }
+  }
 }
-}
-#skills{
+#skills {
   @include display-column(1em, center);
   width: 100%;
-  .skills-container{
-    // @include flex-row(100%, center, $second-font);
+  .skills-container {
     width: 100%;
     display: flex;
-    // grid:auto/repeat(2,1fr);
-   
-      flex-wrap: wrap;
-      padding: 1em;
-     gap: 1em;
-    .skill-card{
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em;
+    gap: 1em;
+    .skill-card {
       height: 150px;
       width: 300px;
       @include display-column(1em, center);
       box-shadow: 5px 5px 10px #3a3838bc;
       padding: 1em;
-      img{
-        height:40%;
+      img {
+        height: 40%;
         object-fit: cover;
         width: auto;
       }
     }
   }
-  h2{
+  h2 {
     @include section-title();
   }
-  
 }
-#services{
+#services {
   @include display-column(2em, center);
   padding: 0;
   width: 100%;
   padding: 0;
   margin: 0;
-  .services-container{
+  .services-container {
     justify-content: center;
     display: flex;
     box-sizing: border-box;
@@ -300,7 +295,7 @@ h2 {
     gap: 1em;
     padding: 2em 0;
     margin: 0;
-    .card{
+    .card {
       height: 200px;
       text-align: center;
       width: auto;
@@ -310,22 +305,22 @@ h2 {
       justify-content: center;
       // flex:1 1 auto;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      transition: transform .2s ease-in;
+      transition: transform 0.2s ease-in;
       flex-basis: 20%;
-      h4{
+      h4 {
         font-family: $second-font;
         font-size: 1.5em;
       }
-      &:hover{
-        transform: translate(0,-.5em);
+      &:hover {
+        transform: translate(0, -0.5em);
       }
-      i{
-        color:rgba(255, 0, 0, 0.519);
+      i {
+        color: rgba(255, 0, 0, 0.519);
       }
     }
   }
 }
-.section-title{
+.section-title {
   @include section-title();
 }
 #smooth-wrapper {
@@ -345,28 +340,42 @@ h2 {
   width: 100%;
   will-change: transform;
 }
-#contactBtn{
- background-color: transparent;
- border: none;
+#contactBtn {
+  background-color: transparent;
+  border: none;
 }
-.filter-buttons{
-  @include flex-row(100%, center, $first-font, );
+.filter-buttons {
+  @include flex-row(100%, center, $first-font);
   margin-top: 1em;
   gap: 1rem;
-  .filter-button{
+  .filter-button {
     @include button-style(rgba(18, 18, 18, 0.627), $first-font);
     border: none;
     font-weight: 600;
-    padding: .5em 1.5em;
+    padding: 0.5em 1.5em;
+  }
+  .filter-control-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 1.3em;
+    font-weight: 700;
+    i{
+      color: $secondary-color;
+    }
   }
 }
-.card{
+.card {
   box-sizing: border-box;
 }
 @keyframes fade-in {
-  from{opacity: 0;}
-  to{opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.fade-in-card{
-  animation:fade-in 1s linear;
+.fade-in-card {
+  animation: fade-in .5s linear;
 }
+
