@@ -4,16 +4,14 @@ function toggleTheme() {
     const body = document.querySelector('body');
     if (body.dataset.bsTheme == 'dark') {
       body.dataset.bsTheme = 'light';
-            document.querySelectorAll('.services-container .card').forEach(card=> card.style.backgroundColor = '')
 
       themeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
     } else {
       body.dataset.bsTheme = 'dark';
-      document.querySelectorAll('.services-container .card').forEach(card=> card.style.backgroundColor = 'black')
 
       body.style.backgroundImage =
         // 'linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))';
-      themeBtn.innerHTML = '<i class="bi bi-brightness-high"></i>';
+        themeBtn.innerHTML = '<i class="bi bi-brightness-high"></i>';
     }
   };
 }
@@ -176,8 +174,10 @@ function openLightBox(title, images) {
               <div class="carousel-inner">
                 ${images
                   .map(
-                    (image, index) => ` <div class="carousel-item ${index== 0 ?'active':''}">
-                  <img src="${image}" class="d-block w-100" alt="${title}" height="600" style="object-fit:cover;">
+                    (image, index) => ` <div class="carousel-item ${
+                      index == 0 ? 'active' : ''
+                    }">
+                  <img src="${image}" class="d-block w-100" alt="${title}" height="80%" style="object-fit:cover;">
               </div>`
                   )
                   .join('')}
@@ -202,4 +202,3 @@ function openLightBox(title, images) {
   //   smoother.refresh();
   // });
 }
-

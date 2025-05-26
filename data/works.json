@@ -2,10 +2,10 @@
     {
         "id":1,
         "title":"Booki",
-        "cover" : "../images/booki.webp",
+        "cover" : "/images/booki.webp",
         "snapShots":[
-            "../images/booki-sm.webp",
-            "../images/booki-bottom.webp"
+            "/images/booki-sm.webp",
+            "/images/booki-bottom.webp"
         ],
         "category":"front",
         "tags":[
@@ -16,25 +16,25 @@
       {
         "id":2,
         "title":"Sophie Bluel",
-        "cover" : "../images/sophie-home.webp",
+        "cover" : "/images/sophie-home.webp",
          "snapShots":[
-            "../images/sb_modal.webp",
-            "../images/sophie-home.webp"
+            "/images/sb_modal.webp",
+            "/images/sophie-home.webp"
         ],
         "category":"front",
         "tags":[
-          "HTML 5 ", "CSS", "Node.js", "RESTFUL API"
+          "HTML 5 ", "CSS", "Node.js", "REST API"
         ],
         "ghLink"  : "https://github.com/ChafaaDev/Portfolio_Sophie_Bluel.git"
     },
       {
         "id":3,
         "title":"Kasa",
-        "cover" : "../images/kasa-home.jpeg",
+        "cover" : "/images/kasa-home.jpeg",
          "snapShots":[
-            "../images/kasa-sm.webp",
-            "../images/kasa_about.webp",
-            "../images/kasa-home.jpeg"
+            "/images/kasa-sm.webp",
+            "/images/kasa_about.webp",
+            "/images/kasa-home.jpeg"
         ],
         "category":"front",
         "tags":[
@@ -45,10 +45,10 @@
       {
         "id":4,
         "title":"Nina Carducci",
-        "cover" : "../images/nina.webp",
+        "cover" : "/images/nina.webp",
          "snapShots":[
-            "../images/kasa-sm.webp",
-            "../images/booki-bottom.webp"
+            "/images/kasa-sm.webp",
+            "/images/booki-bottom.webp"
         ],
         "description":"Optimisation du site de la photographe Nina Carducci",
         "tags":[
@@ -60,26 +60,26 @@
       {
         "id":5,
         "title":"Mon vieux Grimoire",
-        "cover" : "../images/vgrim.png",
+        "cover" : "/images/vgrim.png",
          "snapShots":[
-            "../images/vgbook.png",
-            "../images/vgform.png",
-            "../images/vgitem.png",
-            "../images/vgrim.png"
+            "/images/vgbook.png",
+            "/images/vgform.png",
+            "/images/vgitem.png",
+            "/images/vgrim.png"
         ],
         "category":"backend",
         "tags":[
-          "HTML 5 ", "CSS"
+          "HTML 5 ", "CSS", "Node.js","API"
         ],
         "ghLink"  : "https://github.com/ChafaaDev/P7-Dev-Web-livres.git"
     },
           {
         "id":6,
         "title":"San Fransisco Cofee",
-        "cover" : "../images/coffee.webp",
+        "cover" : "/images/coffee.webp",
          "snapShots":[
-            "../images/clogin.webp",
-            "../images/kasa_about.webp"
+            "/images/clogin.webp",
+            "/images/kasa_about.webp"
         ],
         "category":"fullstack",
         "tags":[
