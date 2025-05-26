@@ -32,8 +32,8 @@
         "title":"Kasa",
         "cover" : "../images/kasa-home.jpeg",
          "snapShots":[
-            "./images/kasa-sm.webp",
-            "./images/kasa_about.webp",
+            "../images/kasa-sm.webp",
+            "../images/kasa_about.webp",
             "../images/kasa-home.jpeg"
         ],
         "category":"front",
@@ -47,8 +47,8 @@
         "title":"Nina Carducci",
         "cover" : "../images/nina.webp",
          "snapShots":[
-            "./images/kasa-sm.webp",
-            "./images/booki-bottom.webp"
+            "../images/kasa-sm.webp",
+            "../images/booki-bottom.webp"
         ],
         "description":"Optimisation du site de la photographe Nina Carducci",
         "tags":[
@@ -62,8 +62,8 @@
         "title":"Mon vieux Grimoire",
         "cover" : "../images/vgrim.png",
          "snapShots":[
-            "./images/vgbook.png",
-            "./images/vgform.png",
+            "../images/vgbook.png",
+            "../images/vgform.png",
             "../images/vgitem.png",
             "../images/vgrim.png"
         ],
@@ -78,8 +78,8 @@
         "title":"San Fransisco Cofee",
         "cover" : "../images/coffee.webp",
          "snapShots":[
-            "./images/clogin.webp",
-            "./images/kasa_about.webp"
+            "../images/clogin.webp",
+            "../images/kasa_about.webp"
         ],
         "category":"fullstack",
         "tags":[

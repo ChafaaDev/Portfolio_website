@@ -80,10 +80,11 @@ $btn-hover-bg-shade-amount:15%;
 body,
 html {
   overflow-x: hidden;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
-body[data-bs-theme="light"]>.hero-section .main-title{
-  color: $font-color-white;
-}
+
 body{
   @include display-column(2em, center);
   // font-family: $first-font;
@@ -300,14 +301,16 @@ h2 {
       height: 200px;
       text-align: center;
       width: auto;
-      background-color: #0a0a0a95;
+      // background-color: #0a0a0a95;
       border: none;
       @include display-column(1em, center);
       justify-content: center;
       flex:1 1 auto;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+       box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), 
+                inset -5px -5px 10px rgba(255, 255, 255, 0.173);
       transition: transform 0.2s ease-in;
       flex-basis: 20%;
+      border-radius: .5em;
       h4 {
         font-family: $second-font;
         font-size: 1.5em;
@@ -347,7 +350,7 @@ h2 {
   margin-top: 1em;
   gap: 1rem;
   .filter-button {
-    @include button-style(rgba(18, 18, 18, 0.627), $first-font);
+    @include button-style(rgba(18, 18, 18, 0.714), $first-font);
     border: none;
     font-weight: 600;
     padding: 0.5em 1.5em;

@@ -4,11 +4,15 @@ function toggleTheme() {
     const body = document.querySelector('body');
     if (body.dataset.bsTheme == 'dark') {
       body.dataset.bsTheme = 'light';
+            document.querySelectorAll('.services-container .card').forEach(card=> card.style.backgroundColor = '')
+
       themeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
     } else {
       body.dataset.bsTheme = 'dark';
+      document.querySelectorAll('.services-container .card').forEach(card=> card.style.backgroundColor = 'black')
+
       body.style.backgroundImage =
-        'linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))';
+        // 'linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))';
       themeBtn.innerHTML = '<i class="bi bi-brightness-high"></i>';
     }
   };

@@ -10,9 +10,9 @@ body,
 html {
   overflow-x: hidden;
 }
-
-body[data-bs-theme=light] > .hero-section .main-title {
-  color: #fff;
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -351,7 +351,6 @@ h2 {
   height: 200px;
   text-align: center;
   width: auto;
-  background-color: rgba(10, 10, 10, 0.5843137255);
   border: none;
   display: flex;
   flex-direction: column;
@@ -360,9 +359,10 @@ h2 {
   gap: 1em;
   justify-content: center;
   flex: 1 1 auto;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset -5px -5px 10px rgba(255, 255, 255, 0.173);
   transition: transform 0.2s ease-in;
   flex-basis: 20%;
+  border-radius: 0.5em;
 }
 #services .services-container .card h4 {
   font-family: "Share Tech", sans-serif;
@@ -412,7 +412,7 @@ h2 {
   gap: 1rem;
 }
 .filter-buttons .filter-button {
-  background-color: rgba(18, 18, 18, 0.627);
+  background-color: rgba(18, 18, 18, 0.714);
   font-family: "Syne", sans-serif;
   padding: 0.5em 1em;
   border-radius: 0.5em;
