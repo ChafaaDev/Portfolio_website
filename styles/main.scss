@@ -239,6 +239,7 @@ h2 {
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       box-sizing: border-box;
       flex: 1 1 auto;
+      position: relative;
       .card-img-top {
         height: 70%;
         width: 100%;
@@ -253,6 +254,12 @@ h2 {
           flex-shrink: 1;
         }
       }
+      .extend-icon{
+        font-size: 1.3rem;
+        position: absolute;
+        right: 1em;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -260,7 +267,7 @@ h2 {
   @include display-column(1em, center);
   width: 100%;
   .skills-container {
-    width: 100%;
+    width: 70%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -268,7 +275,7 @@ h2 {
     gap: 1em;
     .skill-card {
       height: 150px;
-      width: 300px;
+      width: 200px;
       @include display-column(1em, center);
       box-shadow: 5px 5px 10px #3a3838bc;
       padding: 1em;
@@ -281,6 +288,34 @@ h2 {
   }
   h2 {
     @include section-title();
+  }
+  .skills-and-tools-container{
+    display: flex;
+    justify-content: space-between;
+    .tools{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 30%;
+      h3{
+        font-family:$second-font;
+      }
+      .cards-container{
+        background-color: rgba(39, 39, 235, 0.69); 
+        @include flex-row(100%, center,$second-font, );
+        gap: 1rem;
+        padding: 1em;
+        .card{
+        @include flex-row(100%, -c, $second-font, );
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        border: none;
+        background-color: transparent;
+      }
+      }
+    }
   }
 }
 #services {
@@ -409,6 +444,7 @@ h2 {
     padding: 1em;
   }
 }
+
 @media only screen and (max-width:1200px){
    .hero-section-title{
     font-size: 4rem;
@@ -485,18 +521,25 @@ h2 {
     }
   }
 }
-.modal{
-  overflow-y: scroll;
-  .container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    .figure{
-      flex: 1 1 auto;
-      width: auto;
-      img{
-        object-fit: cover;
-        width: 100%;
+
+@media only screen and (max-width:600px){
+  .card{
+    border:none;
+  }
+  #works{
+    padding: 0;
+    .cards-container{
+      margin: 0;
+      padding: 0;
+      gap: 1em;
+      .card{
+        height: 300px;
+        gap:.5rem;
+        border: none;
+        flex-shrink: 1;
+        img{
+          height: 50%;
+        }
       }
     }
   }

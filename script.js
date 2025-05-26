@@ -1,15 +1,15 @@
 function toggleTheme() {
   const themeBtn = document.getElementById('themeBtn');
   themeBtn.onclick = (e) => {
-    const body = document.querySelector('body');
-    if (body.dataset.bsTheme == 'dark') {
-      body.dataset.bsTheme = 'light';
+   const docEl = document.documentElement
+    if (docEl.dataset.bsTheme == 'dark') {
+      docEl.dataset.bsTheme = 'light';
 
       themeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
     } else {
-      body.dataset.bsTheme = 'dark';
+      docEl.dataset.bsTheme = 'dark';
 
-      body.style.backgroundImage =
+      docEl.style.backgroundImage =
         // 'linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))';
         themeBtn.innerHTML = '<i class="bi bi-brightness-high"></i>';
     }
@@ -32,10 +32,13 @@ function createWorksCards(works) {
     <ul class="card-text">${element.tags
       .map((tag) => `<li class="badge text-bg-danger">${tag}</li>`)
       .join('')}</ul>
-    <a href=${element.ghLink} class="btn btn-primary">View on Github</a>
+    <a href=${
+      element.ghLink
+    } target="_blank" class="btn btn-primary">View on Github</a>
+    <span class='extend-icon'><i class="bi bi-arrows-angle-expand"></i></span>
   </div>
 `;
-    workCard.addEventListener('click', () => {
+    workCard.querySelector('.extend-icon').addEventListener('click', () => {
       openLightBox(element.title, element.snapShots);
     });
     document.querySelector('.cards-container').appendChild(workCard);
@@ -163,7 +166,7 @@ function filterWorksCards(items) {
 function openLightBox(title, images) {
   document.querySelector('.modal-container').innerHTML = `
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width:100vw;">
-    <div class="modal-dialog modal-fullscreen">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">${title}</h1>
@@ -177,7 +180,7 @@ function openLightBox(title, images) {
                     (image, index) => ` <div class="carousel-item ${
                       index == 0 ? 'active' : ''
                     }">
-                  <img src="${image}" class="d-block w-100" alt="${title}" height="80%" style="object-fit:cover;">
+                  <img src="${image}" class="d-block w-100" alt="${title}" height="400" width="350" style="object-fit:cover;object-position:top;">
               </div>`
                   )
                   .join('')}

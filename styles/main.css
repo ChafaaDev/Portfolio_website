@@ -266,6 +266,7 @@ h2 {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   box-sizing: border-box;
   flex: 1 1 auto;
+  position: relative;
 }
 .my-works .cards-container .card .card-img-top {
   height: 70%;
@@ -286,6 +287,12 @@ h2 {
 .my-works .cards-container .card ul li {
   flex-shrink: 1;
 }
+.my-works .cards-container .card .extend-icon {
+  font-size: 1.3rem;
+  position: absolute;
+  right: 1em;
+  cursor: pointer;
+}
 
 #skills {
   display: flex;
@@ -296,7 +303,7 @@ h2 {
   width: 100%;
 }
 #skills .skills-container {
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -305,7 +312,7 @@ h2 {
 }
 #skills .skills-container .skill-card {
   height: 150px;
-  width: 300px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -325,6 +332,44 @@ h2 {
   margin: 0;
   font-weight: 700;
   font-family: "Syne", sans-serif;
+}
+#skills .skills-and-tools-container {
+  display: flex;
+  justify-content: space-between;
+}
+#skills .skills-and-tools-container .tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 30%;
+}
+#skills .skills-and-tools-container .tools h3 {
+  font-family: "Share Tech", sans-serif;
+}
+#skills .skills-and-tools-container .tools .cards-container {
+  background-color: rgba(39, 39, 235, 0.69);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  font-family: "Share Tech", sans-serif;
+  gap: 1rem;
+  padding: 1em;
+}
+#skills .skills-and-tools-container .tools .cards-container .card {
+  display: flex;
+  justify-content: -c;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  font-family: "Share Tech", sans-serif;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  border: none;
+  background-color: transparent;
 }
 
 #services {
@@ -553,21 +598,27 @@ h2 {
     font-size: 5px;
   }
 }
-.modal {
-  overflow-y: scroll;
-}
-.modal .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.modal .container .figure {
-  flex: 1 1 auto;
-  width: auto;
-}
-.modal .container .figure img {
-  object-fit: cover;
-  width: 100%;
+@media only screen and (max-width: 600px) {
+  .card {
+    border: none;
+  }
+  #works {
+    padding: 0;
+  }
+  #works .cards-container {
+    margin: 0;
+    padding: 0;
+    gap: 1em;
+  }
+  #works .cards-container .card {
+    height: 300px;
+    gap: 0.5rem;
+    border: none;
+    flex-shrink: 1;
+  }
+  #works .cards-container .card img {
+    height: 50%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

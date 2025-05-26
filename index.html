@@ -1,213 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Chafaa Mouhoubi, a web developer specializing in front-end and back-end technologies. Check out my latest projects!">
-  <meta name="keywords" content="web development, front-end, back-end, portfolio, JavaScript, React, Node.js, HTML 5, CSS 3, SCSS, SASS, Responsive design">
-  <meta name="author" content="Chafaa Mouhoubi">
-  <meta property="og:title" content="Chafaa Mouhoubi's Web Dev Portfolio">
-  <meta property="og:description" content="Explore my latest projects and web development skills!">
-  <meta property="og:image" content="[URL to your portfolio preview image]">
-  <meta property="og:url" content="[Your Portfolio URL]">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Chafaa Mouhoubi's Web Dev Portfolio">
-  <meta name="twitter:description" content="Discover my web development projects and expertise!">
-  <meta name="twitter:image" content="[URL to your portfolio preview image]">
-  <link rel="icon" href="[URL to your favicon]" type="image/x-icon">
-  <title>Portfolio website, I'm a junior full-stack developper, here you get to know to a little about my skills in the frontend, I also have some experience on the backend</title>
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/typer-js@5.5.3/dist/typer.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typer-js@5.5.3/dist/typer.min.css">
- 
-</head>
-<body data-bs-theme="dark">
- <div class="modal-container"></div>
-  <div id="smooth-wrapper">
-    <div id="smooth-content">   
-    
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Chafaa Mouhoubi, a web developer specializing in front-end and back-end technologies. Check out my latest projects!"
+    />
+    <meta
+      name="keywords"
+      content="web development, front-end, back-end, portfolio, JavaScript, React, Node.js, HTML 5, CSS 3, SCSS, SASS, Responsive design"
+    />
+    <meta name="author" content="Chafaa Mouhoubi" />
+    <meta property="og:title" content="Chafaa Mouhoubi's Web Dev Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore my latest projects and web development skills!"
+    />
+    <meta property="og:image" content="[URL to your portfolio preview image]" />
+    <meta property="og:url" content="[Your Portfolio URL]" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chafaa Mouhoubi's Web Dev Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Discover my web development projects and expertise!"
+    />
+    <meta
+      name="twitter:image"
+      content="[URL to your portfolio preview image]"
+    />
+    <link rel="icon" href="[URL to your favicon]" type="image/x-icon" />
+    <title>
+      Portfolio website, I'm a junior full-stack developper, here you get to
+      know to a little about my skills in the frontend, I also have some
+      experience on the backend
+    </title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typer-js@5.5.3/dist/typer.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/typer-js@5.5.3/dist/typer.min.css"
+    />
+  </head>
+  <body>
+    <div class="modal-container"></div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
         <header id="top">
           <nav class="navbar container-fluid">
             <ul class="nav-links">
-              <li class="nav-link active"><a href="./index.html" id="logo">CH Coding</a></li>
+              <li class="nav-link active">
+                <a href="./index.html" id="logo">CH Coding</a>
+              </li>
               <li class="nav-link"><a href="#services">Services</a></li>
               <li class="nav-link"><a href="#works">Works</a></li>
               <li class="nav-link"><a href="#about">About</a></li>
               <li class="nav-link"><a href="#skills">Skills</a></li>
               <li class="nav-link"><a href="#contact">Contact</a></li>
               <li>
-                <button id="themeBtn"><i class="bi bi-brightness-high"></i></button>
+                <button id="themeBtn">
+                  <i class="bi bi-brightness-high"></i>
+                </button>
               </li>
-              <li><a href="./French.html"><img src="./images/fr.png" alt="french flag" height="20"></a></li>
+              <li>
+                <a href="./French.html"
+                  ><img src="./images/fr.png" alt="french flag" height="20"
+                /></a>
+              </li>
             </ul>
           </nav>
-
         </header>
-  
-    
-      <section id="hero" data-aos="zoom-out-down" class="hero-section">
-   
+
+        <section id="hero" data-aos="zoom-out-down" class="hero-section">
           <div class="hero-section-container">
-            <h1 class="hero-section-title" style="color: #ffffffc6;"> HELLO, WELCOME TO CH CODING</h1>
-            <span class="hero-section-subtext"
-              style="color: #ffffffc6;"></span
-            >
+            <h1 class="hero-section-title" style="color: #ffffffc6">
+              HELLO, WELCOME TO CH CODING
+            </h1>
+            <span class="hero-section-subtext" style="color: #ffffffc6"></span>
           </div>
+        </section>
+        <main>
+          <section id="services">
+            <h2 class="section-title">Services</h2>
+            <div class="services-container">
+              <div class="card">
+                <h4><i class="bi bi-brush"></i> Web Design</h4>
+              </div>
+              <div class="card">
+                <h4><i class="bi bi-laptop"></i> Frontend development</h4>
+              </div>
+              <div class="card">
+                <h4>
+                  <i class="bi bi-database-check"></i> Backend development
+                </h4>
+              </div>
+              <div class="card">
+                <h4><i class="bi bi-tools"></i> Code maintance</h4>
+              </div>
+              <div class="card">
+                <h4><i class="bi bi-rocket-takeoff"></i> Optimization</h4>
+              </div>
+            </div>
+          </section>
 
-      </section>
-          <main>
-            <section id="services">
-             
-                    <h2 class="section-title">Services</h2>
-              <div class="services-container">
-                <div class="card">
-                  <h4><i class="bi bi-brush"></i> Web Design</h4>
-                </div>
-                  <div class="card" >
-                    <h4> <i class="bi bi-laptop"></i> Frontend development</h4>
-                  </div>
-                  <div class="card" >
-                    <h4> <i class="bi bi-database-check"></i> Backend development</h4>
-                  </div>
-                    <div class="card" >
-                      <h4><i class="bi bi-tools"></i> Code maintance</h4>
-                    </div>
-                    <div class="card">
-                      <h4><i class="bi bi-rocket-takeoff"></i> Optimization</h4>
-                    </div>
-            
+          <section class="my-works" id="works">
+            <h2>Selected works</h2>
+            <div class="filter-buttons container">
+              <h3 class="filter-title">
+                <i class="bi bi-filter-circle"></i> Filters
+              </h3>
+              <button
+                class="filter-button"
+                data-id="All"
+                aria-pressed="true"
+                style="color: #ffffffc7"
+              >
+                All
+              </button>
+              <button
+                class="filter-button"
+                data-id="front"
+                style="color: #ffff"
+              >
+                Front
+              </button>
+              <button
+                class="filter-button"
+                data-id="backend"
+                style="color: #ffff"
+              >
+                Backend
+              </button>
+              <button
+                class="filter-button"
+                data-id="fullstack"
+                style="color: #ffff"
+              >
+                Fullstack
+              </button>
+              <button class="filter-button" data-id="seo" style="color: #ffff">
+                Seo
+              </button>
+            </div>
+            <div class="cards-container container" data-aos="zoom-in"></div>
+          </section>
+          <section id="skills" data-aos="zoom-out-left">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-and-tools-container">
+              <div class="skills-container"></div>
+            <div class="tools container">
+              <h3>Tools & environment</h3>
+             <div class="cards-container">
+               <div class="card">
+                <img src="./data/vsc.png" alt="" height="50" width="50">
+                <span class="title">Vs Code</span>
+              </div>
+               <div class="card">
+                <img src="./data/figma.png" alt="" height="50" width="50">
+                <span class="title">Figma</span>
+              </div>
+               <div class="card">
+                <img src="./data/gh.png" alt="" height="50" width="50">
+                <span class="title">git & Github</span>
+              </div>
+             </div>
+            </div>
+            </div>
+          </section>
 
-             </div> 
-            </section>  
-                
-              
-            
-          
-        <section class="my-works" id="works">
-          <h2>
-            Selected works
-          </h2>
-          <div class="filter-buttons container">
-            <h3 class="filter-title"><i class="bi bi-filter-circle"></i>  Filters</h3>
-             <button class="filter-button" data-id="All" aria-pressed="true" style="color: #ffffffc7;">All</button>
-                               <button class="filter-button" data-id="front" style="color: #ffff;">Front</button>
-                             <button class="filter-button" data-id="backend" style="color: #ffff;">Backend</button>
-                           <button class="filter-button" data-id="fullstack" style="color: #ffff;">Fullstack</button>
-                                 <button class="filter-button" data-id="seo" style="color: #ffff;">Seo</button>
-          </div>
-          <div class="cards-container" data-aos="zoom-in"></div>
-           <!-- <div class="modal" tabindex="-1" id="_modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-       
-          
-                </section>
-                <section id="skills" data-aos="zoom-out-left">
-                  <h2 class="section-title">Skills</h2>
-                  <div class="skills-container"></div>
-                </section>
-           
           <section id="about" class="about">
-                  <h2 class="section-title">About me</h2>
+            <h2 class="section-title">About me</h2>
 
-          <article class="about-container" data-aos="zoom-out-down">
-     
-          
-       <div class="about-me-text">
-      
-          <p class="quote-text"><i class="bi bi-quote" style="font-size: 2em;"></i>
-              Solutions Bringing ideas to life through clean code and innovative design. 
-              As a passionate full-stack developer, I build seamless web experiences from front to back, ensuring functionality meets creativity.
-              Whether it's crafting intuitive user interfaces or optimizing backend logic, I thrive on turning complex problems into elegant solutions. 
-              Let's build something great together.
-          </p>
-        </div>
-          
+            <article class="about-container" data-aos="zoom-out-down">
+              <div class="about-me-text">
+                <p class="quote-text">
+                  <i class="bi bi-quote" style="font-size: 2em"></i>
+                  Solutions Bringing ideas to life through clean code and
+                  innovative design. As a passionate full-stack developer, I
+                  build seamless web experiences from front to back, ensuring
+                  functionality meets creativity. Whether it's crafting
+                  intuitive user interfaces or optimizing backend logic, I
+                  thrive on turning complex problems into elegant solutions.
+                  Let's build something great together.
+                </p>
+              </div>
             </article>
           </section>
-             <section id="contact" class= "container" >
-              <h2 class="section-title"> <i class="bi bi-telephone"></i> Contact </h2>
+          <section id="contact" class="container">
+            <h2 class="section-title">
+              <i class="bi bi-telephone"></i> Contact
+            </h2>
             <form class="container">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  required
+                />
+                <div id="emailHelp" class="form-text">
+                  We'll never share your email with anyone else.
+                </div>
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label"></label>
-                <textarea class="form-control" id="message" placeholder="Write your message here"></textarea>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  placeholder="Write your message here"
+                ></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </section>
-      </main>
-      <section class="links-to-follow" data-aos="zoom-in-left">
+        </main>
+        <section class="links-to-follow" data-aos="zoom-in-left">
           <h2>Follow me on</h2>
           <div class="links-container">
-              <ul class="links-list">
-                  <li><a href=""><i class="bi bi-instagram"></i></a></li>
-                  <li><a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-                  <li><a href=""><i class="bi bi-github"></i></a></li>
-                  <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
-              </ul>
+            <ul class="links-list">
+              <li>
+                <a href=""><i class="bi bi-instagram"></i></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/"
+                  target="_blank"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""><i class="bi bi-github"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+              </li>
+            </ul>
           </div>
-      </section>
-      
-      
-       
- 
+        </section>
 
-
- 
-    <footer></footer>
-  </div>
-</div>
- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>  
-<script>
+        <footer></footer>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script>
       const date = new Date().getFullYear();
-      const copywrite =  `<i class="bi bi-c-circle"></i>  copywrite ${date} All rights reserved`
-      document.querySelector('footer').innerHTML = copywrite
-    
-      const subtitle = document.querySelector('.hero-section-subtext')
-      typer(subtitle).line('I\'m Chafaa Mouhoubi, I\'m a junior fullstack developper')
+      const copywrite = `<i class="bi bi-c-circle"></i>  copywrite ${date} All rights reserved`;
+      document.querySelector('footer').innerHTML = copywrite;
+
+      const subtitle = document.querySelector('.hero-section-subtext');
+      typer(subtitle).line(
+        "I'm Chafaa Mouhoubi, I'm a junior fullstack developper"
+      );
       AOS.init();
-</script>
-</body>
+    </script>
+  </body>
 </html>
