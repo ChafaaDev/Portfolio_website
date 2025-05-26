@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Chafaa Mouhoubi, a web developer specializing in front-end and back-end technologies. Check out my latest projects!">
+  <meta name="keywords" content="web development, front-end, back-end, portfolio, JavaScript, React, Node.js, HTML 5, CSS 3, SCSS, SASS, Responsive design">
+  <meta name="author" content="Chafaa Mouhoubi">
+  <meta property="og:title" content="Chafaa Mouhoubi's Web Dev Portfolio">
+  <meta property="og:description" content="Explore my latest projects and web development skills!">
+  <meta property="og:image" content="[URL to your portfolio preview image]">
+  <meta property="og:url" content="[Your Portfolio URL]">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chafaa Mouhoubi's Web Dev Portfolio">
+  <meta name="twitter:description" content="Discover my web development projects and expertise!">
+  <meta name="twitter:image" content="[URL to your portfolio preview image]">
+  <link rel="icon" href="[URL to your favicon]" type="image/x-icon">
   <title>Portfolio website, I'm a junior full-stack developper, here you get to know to a little about my skills in the frontend, I also have some experience on the backend</title>
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="./styles/main.css">
@@ -19,17 +32,19 @@
  
 </head>
 <body data-bs-theme="dark">
- 
+ <div class="modal-container"></div>
   <div id="smooth-wrapper">
     <div id="smooth-content">   
     
         <header id="top">
           <nav class="navbar container-fluid">
             <ul class="nav-links">
-              <li class="nav-link"><a href="./index.html" id="logo">CH Coding</a></li>
+              <li class="nav-link active"><a href="./index.html" id="logo">CH Coding</a></li>
+              <li class="nav-link"><a href="#services">Services</a></li>
+              <li class="nav-link"><a href="#works">Works</a></li>
               <li class="nav-link"><a href="#about">About</a></li>
               <li class="nav-link"><a href="#skills">Skills</a></li>
-              <li class="contact-link"><a href="#contact">Contact</a></li>
+              <li class="nav-link"><a href="#contact">Contact</a></li>
               <li>
                 <button id="themeBtn"><i class="bi bi-brightness-high"></i></button>
               </li>
@@ -78,12 +93,12 @@
               
             
           
-        <section class="my-works">
+        <section class="my-works" id="works">
           <h2>
             Selected works
           </h2>
           <div class="filter-buttons container">
-            <button class="filter-control-btn"><i class="bi bi-filter-circle"></i>  Filters</button>
+            <h3 class="filter-title"><i class="bi bi-filter-circle"></i>  Filters</h3>
             <button class="filter-button" data-id="All" aria-pressed="true">All</button>
             <button class="filter-button" data-id="front">Front</button>
             <button class="filter-button" data-id="backend">Backend</button>
@@ -91,13 +106,35 @@
             <button class="filter-button" data-id="seo">Seo</button>
           </div>
           <div class="cards-container" data-aos="zoom-in"></div>
-          
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="myOffcanvas" aria-labelledby="offcanvasWithBothOptionsLabel" style="width: 50%;">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+           <!-- <div class="modal" tabindex="-1" id="_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
-        <div class="offcanvas-body"></div>
+      </div>
+    </div> -->
+
+       
           
                 </section>
                 <section id="skills" data-aos="zoom-out-left">
@@ -123,24 +160,8 @@
           
             </article>
           </section>
-      </main>
-      <section class="links-to-follow" data-aos="zoom-in-left">
-          <h2>Follow me on</h2>
-          <div class="links-container">
-              <ul class="links-list">
-                  <li><a href=""><i class="bi bi-instagram"></i></a></li>
-                  <li><a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-                  <li><a href=""><i class="bi bi-github"></i></a></li>
-                  <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
-              </ul>
-          </div>
-          <div class="language-choice">
-            <img src="./images/french-flag.png" alt="" height="20">
-          </div>
-      </section>
-      
-      
-          <section id="contact" class= "container" >
+             <section id="contact" class= "container" >
+              <h2 class="section-title"> <i class="bi bi-telephone"></i> Contact </h2>
             <form class="container">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -154,6 +175,21 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </section>
+      </main>
+      <section class="links-to-follow" data-aos="zoom-in-left">
+          <h2>Follow me on</h2>
+          <div class="links-container">
+              <ul class="links-list">
+                  <li><a href=""><i class="bi bi-instagram"></i></a></li>
+                  <li><a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href=""><i class="bi bi-github"></i></a></li>
+                  <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
+              </ul>
+          </div>
+      </section>
+      
+      
+       
  
 
 

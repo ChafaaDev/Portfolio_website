@@ -75,26 +75,29 @@ $btn-hover-bg-shade-amount:15%;
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body,
 html {
   overflow-x: hidden;
 }
-
-body {
+body[data-bs-theme="light"]>.hero-section .main-title{
+  color: $font-color-white;
+}
+body{
   @include display-column(2em, center);
   // font-family: $first-font;
-  background-image: linear-gradient(
-    to right,
-    rgb(55, 65, 81),
-    rgb(17, 24, 39),
-    rgb(0, 0, 0)
-  );
+  // background-image: linear-gradient(
+  //   to right,
+  //   rgb(55, 65, 81),
+  //   rgb(17, 24, 39),
+  //   rgb(0, 0, 0)
+  // );
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
   overscroll-behavior: none;
-
+  --webkit-scrollbar:none;
   height: 100vh;
 }
 main {
@@ -122,8 +125,9 @@ header {
       .nav-link a {
         text-decoration: none;
         color: inherit;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 600;
+        transition: color .3s linear;
         &:hover{
          color: $primary-color;
         &:active{
@@ -161,14 +165,7 @@ header {
 .hero-section-title {
   @include main-title($second-font, 900, 5em);
 }
-.contact-link {
-  @include button-style($primary-color, $second-font);
-  font-weight: 700;
-  text-decoration: none;
-  color: $font-color-white;
-  font-size: 1.1em;
-  padding: 0.5em 2em;
-}
+
 #about {
   @include display-column(1em, center);
   .about-container {
@@ -226,22 +223,23 @@ h2 {
   h2 {
     @include section-title();
   }
-  .cards-container {
+  .cards-container{
     @include flex-row(100%, center, $first-font);
     flex-wrap: wrap;
     gap: 1em;
     box-sizing: border-box;
     padding: 2em;
     .card {
-      height: 25rem;
+      height: 30rem;
       width: 20rem;
       box-sizing: border-box;
       @include display-column(1em, start);
       box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       box-sizing: border-box;
+      flex: 1 1 auto;
       .card-img-top {
-        height: 65%;
+        height: 70%;
         width: 100%;
         object-fit: cover;
         object-position: top;
@@ -249,7 +247,10 @@ h2 {
       ul {
         list-style: none;
         @include flex-row(100%, start, $first-font);
-        gap: 1em;
+        gap: .5rem;
+        li{
+          flex-shrink: 1;
+        }
       }
     }
   }
@@ -303,7 +304,7 @@ h2 {
       border: none;
       @include display-column(1em, center);
       justify-content: center;
-      // flex:1 1 auto;
+      flex:1 1 auto;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       transition: transform 0.2s ease-in;
       flex-basis: 20%;
@@ -340,10 +341,7 @@ h2 {
   width: 100%;
   will-change: transform;
 }
-#contactBtn {
-  background-color: transparent;
-  border: none;
-}
+
 .filter-buttons {
   @include flex-row(100%, center, $first-font);
   margin-top: 1em;
@@ -354,7 +352,7 @@ h2 {
     font-weight: 600;
     padding: 0.5em 1.5em;
   }
-  .filter-control-btn{
+  .filter-tilte{
     background-color: transparent;
     border: none;
     font-size: 1.3em;
@@ -378,4 +376,125 @@ h2 {
 .fade-in-card {
   animation: fade-in .5s linear;
 }
+#contact{
+  @include display-column(1em, center);
+  .container{
+    width: 60%;
+}
+ i{
+      color: $secondary-color;
+      
+  }
+}
 
+#goUpBtn{
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  i{
+    color: $primary-color;
+    font-size: 30px;
+  }
+  &:hover::after{
+    content: 'Aller en haut de la page';
+    position: absolute;
+    height:30px;
+    width:120px;
+    position: absolute;
+    padding: 1em;
+  }
+}
+@media only screen and (max-width:1200px){
+   .hero-section-title{
+    font-size: 4rem;
+  }
+  #services{
+    .services-container{
+      justify-content: start;
+      flex-wrap: wrap;
+      .card{
+        height: 150px;
+        h4{
+          font-size:1.2rem;
+        }
+      }
+    }
+  }
+  .card{
+    width: 100%;
+    margin: 0;
+  }
+  .filter-buttons{
+    justify-content: space-between;
+
+  }
+  .filter-title{
+    font-size: 1.3rem;
+  }
+  .filter-button{
+    font-size: 13px;
+    flex: 1 1 auto;
+  }
+  .container{
+    justify-content: start;
+  }
+
+}
+@media only screen and (max-width:823px){
+  .hero-section-title{
+    font-size: 2rem;
+  }
+  .container{
+    justify-content: start;
+  }
+  .main-title{
+    font-size: 2rem;
+  }
+  .section-title{
+    font-size: 1.5rem;
+  }
+  .nav-link{
+    font-size: 1rem;
+  }
+  .card{
+    flex-grow: 1;
+    width: 100%;
+  }
+  .filter-tilte{
+    display: none;
+    i{
+      display: block;
+    }
+  }
+  #services{
+      .services-container{
+    h4{
+      font-size: 10px;
+    }
+  }
+  }
+  .car-text{
+    gap:.5em;
+    li{
+      font-size:5px;
+    }
+  }
+}
+.modal{
+  overflow-y: scroll;
+  .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .figure{
+      flex: 1 1 auto;
+      width: auto;
+      img{
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}

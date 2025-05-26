@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Chafaa Mouhoubi, a web developer specializing in front-end and back-end technologies. Check out my latest projects!">
+  <meta name="keywords" content="web development, front-end, back-end, portfolio, JavaScript, React, Node.js, HTML 5, CSS 3, SCSS, SASS, Responsive design">
+  <meta name="author" content="Chafaa Mouhoubi">
+  <meta property="og:title" content="Chafaa Mouhoubi's Web Dev Portfolio">
+  <meta property="og:description" content="Explore my latest projects and web development skills!">
+  <meta property="og:image" content="[URL to your portfolio preview image]">
+  <meta property="og:url" content="[Your Portfolio URL]">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chafaa Mouhoubi's Web Dev Portfolio">
+  <meta name="twitter:description" content="Discover my web development projects and expertise!">
+  <meta name="twitter:image" content="[URL to your portfolio preview image]">
+  <link rel="icon" href="[URL to your favicon]" type="image/x-icon">
   <title>Ch coding, site de mon portfolio, developpeur web fullstack, retrouvez ici mes mes travaux dans le développement web, sur le fron-end et quelques expériences dans le back-end aussi</title>
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="./styles/main.css">
@@ -19,7 +32,7 @@
  
 </head>
 <body data-bs-theme="dark">
- 
+ <div class="modal-container"></div>
   <div id="smooth-wrapper">
     <div id="smooth-content">   
     
@@ -27,13 +40,15 @@
           <nav class="navbar container-fluid">
             <ul class="nav-links">
               <li class="nav-link"><a href="./French.html" id="logo">CH Coding</a></li>
+              <li class="nav-link"><a href="#services">Services</a></li>
+              <li class="nav-link"><a href="#works">Projets</a></li>
               <li class="nav-link"><a href="#about">A propos</a></li>
               <li class="nav-link"><a href="#skills">Compétences</a></li>
-              <li class="contact-link"><a href="#contact">Contacte</a></li>
+              <li class="nav-link"><a href="#contact">Contact</a></li>
               <li>
                 <button id="themeBtn"><i class="bi bi-brightness-high"></i></button>
               </li>
-               <li><a href="./index.html"><img src="./images/en.png" alt="french flag" height="20"></a></li>
+               <li><a href="./index.html" id="langLogo"><img src="./images/en.png" alt="french flag" height="25"></a></li>
             </ul>
           </nav>
 
@@ -43,7 +58,7 @@
       <section id="hero" data-aos="zoom-out-down" class="hero-section">
    
           <div class="hero-section-container">
-            <h1 class="hero-section-title"> Salut, bienvenu sur CH CODING</h1>
+            <h1 class="hero-section-title"> BONJOUR, BIENVENUE SUR CH CODING</h1>
             <span class="hero-section-subtext"
               ></span
             >
@@ -78,17 +93,17 @@
               
             
           
-        <section class="my-works">
+        <section class="my-works" id="works">
           <h2>
-            Selected works
+           Mes projets
           </h2>
           <div class="filter-buttons container">
-            <button class="filter-control-btn"><i class="bi bi-filter-circle"></i>  Filtres</button>
+            <h3 class="filter-tilte"><i class="bi bi-filter-circle"></i>  Filtres</h3>
             <button class="filter-button" data-id="All" aria-pressed="true">Tous</button>
             <button class="filter-button" data-id="front">Front-end</button>
             <button class="filter-button" data-id="backend">Back-end</button>
             <button class="filter-button" data-id="fullstack">Fullstack</button>
-            <button class="filter-button" data-id="seo">Seo</button>
+            <button class="filter-button" data-id="seo">SEO</button>
           </div>
           <div class="cards-container" data-aos="zoom-in"></div>
           
@@ -123,24 +138,9 @@
           
             </article>
           </section>
-      </main>
-      <section class="links-to-follow" data-aos="zoom-in-left">
-          <h2>Suivez-moi sur</h2>
-          <div class="links-container">
-              <ul class="links-list">
-                  <li><a href=""><i class="bi bi-instagram"></i></a></li>
-                  <li><a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-                  <li><a href=""><i class="bi bi-github"></i></a></li>
-                  <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
-              </ul>
-          </div>
-          <div class="language-choice">
-            <img src="./images/french-flag.png" alt="" height="20">
-          </div>
-      </section>
       
-      
-          <section id="contact" class= "container" >
+          <section id="contact" class="container">
+            <h2 class="section-title"> <i class="bi bi-telephone"></i> Contact </h2>
             <form class="container">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Adress mail</label>
@@ -154,9 +154,21 @@
               <button type="submit" class="btn btn-primary">Soumettre</button>
             </form>
           </section>
- 
+          </main>
+             <section class="links-to-follow" data-aos="zoom-in-left">
+          <h2>Suivez-moi sur</h2>
+          <div class="links-container">
+              <ul class="links-list">
+                  <li><a href=""><i class="bi bi-instagram"></i></a></li>
+                  <li><a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href=""><i class="bi bi-github"></i></a></li>
+                  <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
+              </ul>
+          </div>
+         
+      </section>
 
-
+        <a href="#top" id="goUpBtn"><i class="bi bi-caret-up-square-fill"></i></a>
  
     <footer></footer>
   </div>

@@ -19,7 +19,7 @@
         "cover" : "../images/sophie-home.webp",
          "snapShots":[
             "../images/sb_modal.webp",
-            "../images/booki-bottom.webp"
+            "../images/sophie-home.webp"
         ],
         "category":"front",
         "tags":[
@@ -33,7 +33,8 @@
         "cover" : "../images/kasa-home.jpeg",
          "snapShots":[
             "./images/kasa-sm.webp",
-            "./images/kasa_about.webp"
+            "./images/kasa_about.webp",
+            "../images/kasa-home.jpeg"
         ],
         "category":"front",
         "tags":[
@@ -61,8 +62,10 @@
         "title":"Mon vieux Grimoire",
         "cover" : "../images/vgrim.png",
          "snapShots":[
-            "./images/kasa-sm.webp",
-            "./images/booki-bottom.webp"
+            "./images/vgbook.png",
+            "./images/vgform.png",
+            "../images/vgitem.png",
+            "../images/vgrim.png"
         ],
         "category":"backend",
         "tags":[

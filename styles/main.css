@@ -3,11 +3,16 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body,
 html {
   overflow-x: hidden;
+}
+
+body[data-bs-theme=light] > .hero-section .main-title {
+  color: #fff;
 }
 
 body {
@@ -16,11 +21,11 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 2em;
-  background-image: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
   overscroll-behavior: none;
+  --webkit-scrollbar:none;
   height: 100vh;
 }
 
@@ -77,8 +82,9 @@ header .navbar .nav-links #themeBtn {
 header .navbar .nav-links .nav-link a {
   text-decoration: none;
   color: inherit;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 600;
+  transition: color 0.3s linear;
 }
 header .navbar .nav-links .nav-link a:hover {
   color: rgba(218, 25, 44, 0.8588235294);
@@ -127,23 +133,6 @@ header .navbar .nav-links .nav-link a:hover:active {
   font-family: "Share Tech", sans-serif;
   font-weight: 900;
   font-size: 5em;
-}
-
-.contact-link {
-  background-color: rgba(218, 25, 44, 0.8588235294);
-  font-family: "Share Tech", sans-serif;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  transition: box-shadow 0.3s ease-in-out;
-  box-shadow: 0 0 20px transparent;
-  font-weight: 700;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.1em;
-  padding: 0.5em 2em;
-}
-.contact-link:hover {
-  box-shadow: 0 0 20px rgba(218, 25, 44, 0.8588235294);
 }
 
 #about {
@@ -266,7 +255,7 @@ h2 {
   padding: 2em;
 }
 .my-works .cards-container .card {
-  height: 25rem;
+  height: 30rem;
   width: 20rem;
   box-sizing: border-box;
   display: flex;
@@ -276,9 +265,10 @@ h2 {
   gap: 1em;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   box-sizing: border-box;
+  flex: 1 1 auto;
 }
 .my-works .cards-container .card .card-img-top {
-  height: 65%;
+  height: 70%;
   width: 100%;
   object-fit: cover;
   object-position: top;
@@ -291,7 +281,10 @@ h2 {
   width: 100%;
   padding: 0;
   font-family: "Syne", sans-serif;
-  gap: 1em;
+  gap: 0.5rem;
+}
+.my-works .cards-container .card ul li {
+  flex-shrink: 1;
 }
 
 #skills {
@@ -366,6 +359,7 @@ h2 {
   align-items: center;
   gap: 1em;
   justify-content: center;
+  flex: 1 1 auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transition: transform 0.2s ease-in;
   flex-basis: 20%;
@@ -407,11 +401,6 @@ h2 {
   will-change: transform;
 }
 
-#contactBtn {
-  background-color: transparent;
-  border: none;
-}
-
 .filter-buttons {
   display: flex;
   justify-content: center;
@@ -436,13 +425,13 @@ h2 {
 .filter-buttons .filter-button:hover {
   box-shadow: 0 0 20px rgba(218, 25, 44, 0.8588235294);
 }
-.filter-buttons .filter-control-btn {
+.filter-buttons .filter-tilte {
   background-color: transparent;
   border: none;
   font-size: 1.3em;
   font-weight: 700;
 }
-.filter-buttons .filter-control-btn i {
+.filter-buttons .filter-tilte i {
   color: rgba(248, 26, 26, 0.842);
 }
 
@@ -460,6 +449,125 @@ h2 {
 }
 .fade-in-card {
   animation: fade-in 0.5s linear;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+#contact .container {
+  width: 60%;
+}
+#contact i {
+  color: rgba(248, 26, 26, 0.842);
+}
+
+#goUpBtn {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  bottom: 0;
+  right: 0;
+}
+#goUpBtn i {
+  color: rgba(218, 25, 44, 0.8588235294);
+  font-size: 30px;
+}
+#goUpBtn:hover::after {
+  content: "Aller en haut de la page";
+  position: absolute;
+  height: 30px;
+  width: 120px;
+  position: absolute;
+  padding: 1em;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero-section-title {
+    font-size: 4rem;
+  }
+  #services .services-container {
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  #services .services-container .card {
+    height: 150px;
+  }
+  #services .services-container .card h4 {
+    font-size: 1.2rem;
+  }
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+  .filter-buttons {
+    justify-content: space-between;
+  }
+  .filter-title {
+    font-size: 1.3rem;
+  }
+  .filter-button {
+    font-size: 13px;
+    flex: 1 1 auto;
+  }
+  .container {
+    justify-content: start;
+  }
+}
+@media only screen and (max-width: 823px) {
+  .hero-section-title {
+    font-size: 2rem;
+  }
+  .container {
+    justify-content: start;
+  }
+  .main-title {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
+  .card {
+    flex-grow: 1;
+    width: 100%;
+  }
+  .filter-tilte {
+    display: none;
+  }
+  .filter-tilte i {
+    display: block;
+  }
+  #services .services-container h4 {
+    font-size: 10px;
+  }
+  .car-text {
+    gap: 0.5em;
+  }
+  .car-text li {
+    font-size: 5px;
+  }
+}
+.modal {
+  overflow-y: scroll;
+}
+.modal .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.modal .container .figure {
+  flex: 1 1 auto;
+  width: auto;
+}
+.modal .container .figure img {
+  object-fit: cover;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
