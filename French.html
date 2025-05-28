@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="Chafaa Mouhoubi's Web Dev Portfolio">
   <meta name="twitter:description" content="Discover my web development projects and expertise!">
   <meta name="twitter:image" content="[URL to your portfolio preview image]">
-  <link rel="icon" href="[URL to your favicon]" type="image/x-icon">
+  <link rel="icon" href="./images/favicon.JPG" type="image/x-icon">
   <title>Ch coding, site de mon portfolio, developpeur web fullstack, retrouvez ici mes mes travaux dans le développement web, sur le fron-end et quelques expériences dans le back-end aussi</title>
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="./styles/main.css">
@@ -29,76 +29,90 @@
   />
   <script src="https://cdn.jsdelivr.net/npm/typer-js@5.5.3/dist/typer.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typer-js@5.5.3/dist/typer.min.css">
- 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
 </head>
 <body data-bs-theme="dark">
  <div class="modal-container"></div>
   <div id="smooth-wrapper">
     <div id="smooth-content">   
-    
-        <header id="top">
-          <nav class="navbar container-fluid">
-            <ul class="nav-links">
-              <li class="nav-link"><a href="./French.html" id="logo">CH Coding</a></li>
-              <li class="nav-link"><a href="#services">Services</a></li>
-              <li class="nav-link"><a href="#works">Projets</a></li>
-              <li class="nav-link"><a href="#about">A propos</a></li>
-              <li class="nav-link"><a href="#skills">Compétences</a></li>
-              <li class="nav-link"><a href="#contact">Contact</a></li>
-              <li>
-                <button id="themeBtn"><i class="bi bi-brightness-high"></i></button>
-              </li>
-               <li><a href="./index.html" id="langLogo"><img src="./images/en.png" alt="french flag" height="25"></a></li>
-            </ul>
-          </nav>
-
-        </header>
-  
-    
+      <header id="top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">CH Coding</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#works">Projets</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#skills">Compétences</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">A propos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">contact</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Settings
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="./index.html">English <i class="bi bi-globe2"></i></a></li>
+                      <li><button class="btn dropdown-item" onclick="toggleTheme()">theme</button>
+                    </ul>
+                  </li>
+                </ul>
+          </div>
+        </nav>
+      </header>
       <section id="hero" data-aos="zoom-out-down" class="hero-section">
-   
-          <div class="hero-section-container">
+        <div class="hero-section-container">
             <h1 class="hero-section-title"> BONJOUR, BIENVENUE SUR CH CODING</h1>
             <span class="hero-section-subtext"
               ></span
             >
-          </div>
-
+            <a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank" class="contact-link">contact me</a>
+        </div>
       </section>
           <main>
             <section id="services">
-             
-                    <h2 class="section-title">Services</h2>
+              <h2 class="section-title">Services</h2>
               <div class="services-container">
-                <div class="card">
-                  <h4><i class="bi bi-brush"></i> Web Design</h4>
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/webd.jpg" alt="image of a man looking at a gallery of pictures on his laptop">
+                    </div>
+                    <div class="swiper-slide"><img src="./images/bc_code.jpeg" alt="photo of programming code on a screen">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/bc_code_light.jpeg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/bc_code_light.jpeg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/seo.jpg" alt="sheets of performances improvement for a website">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
                 </div>
-                  <div class="card" >
-                    <h4> <i class="bi bi-laptop"></i> Front-end </h4>
-                  </div>
-                  <div class="card" >
-                    <h4> <i class="bi bi-database-check"></i> Back-end </h4>
-                  </div>
-                    <div class="card" >
-                      <h4><i class="bi bi-tools"></i> Maintenance du code</h4>
-                    </div>
-                    <div class="card">
-                      <h4><i class="bi bi-rocket-takeoff"></i> Optimisation</h4>
-                    </div>
-            
-
-             </div> 
+              </div> 
             </section>  
-                
-              
-            
-          
-        <section class="my-works" id="works">
+      <section class="my-works" id="works">
           <h2>
            Mes projets
           </h2>
           <div class="filter-buttons container">
-            <h3 class="filter-tilte"><i class="bi bi-filter-circle"></i>  Filtres</h3>
+            <h3 class="filter-tilte">Filtres</h3>
             <button class="filter-button" data-id="All" aria-pressed="true">Tous</button>
             <button class="filter-button" data-id="front">Front-end</button>
             <button class="filter-button" data-id="backend">Back-end</button>
@@ -106,84 +120,94 @@
             <button class="filter-button" data-id="seo">SEO</button>
           </div>
           <div class="cards-container" data-aos="zoom-in"></div>
-          
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="myOffcanvas" aria-labelledby="offcanvasWithBothOptionsLabel" style="width: 50%;">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </section>
+      <section id="skills" data-aos="zoom-out-left">
+        <h2 class="section-title">compétences</h2>
+        <div class="skills-and-tools-container">
+          <div class="skills-container">
+            <div class="front-skills">
+              <h4>Front-end</h4>
+            </div>
+              <div class="back-skills">
+                  <h4>Backend</h4>
+              </div>
+              <div class="soft-skills">
+                <h4>Soft skills</h4>
+                  <ul>
+                    <li>Résolution des problèmes</li>
+                    <li>Créativité et adaptabilité</li>
+                    <li>Travail en équipe</li>
+                    <li>Apprentissage constant et pratique du code</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="tools card">
+            <h4>Outils</h4>
+            <ul style="list-style: none;">
+              <li>
+                <i class="devicon-vscode-plain-wordmark colored"></i>
+              </li>
+              <li>
+                <i class="devicon-figma-plain colored"></i>
+              </li>
+              <li>
+                <i class="bi bi-github"></i>
+              </li>
+              <li>
+                <i class="bi bi-git"></i>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="offcanvas-body"></div>
-          
-                </section>
-                <section id="skills" data-aos="zoom-out-left">
-                  <h2 class="section-title">compétences</h2>
-                  <div class="skills-container"></div>
-                </section>
-           
-          <section id="about" class="about">
-                  <h2 class="section-title">Apropos de moi</h2>
-
-          <article class="about-container" data-aos="zoom-out-down">
-     
-          
-       <div class="about-me-text">
-      
-          <p class="quote-text"><i class="bi bi-quote" style="font-size: 2em;"></i>
+      </section>
+      <section id="about" class="about">
+        <h2 class="section-title">Apropos de moi</h2>
+        <article class="about-container" data-aos="zoom-out-down">
+           <img src="./images/aicoder.jpg" alt="picture of a young man sitting working on his computer and wearing headphones" height="400">
+          <div class="about-me-text">
+            <p class="quote-text"><i class="bi bi-quote" style="font-size: 2em;"></i>
               Solutions Bringing ideas to life through clean code and innovative design. 
               As a passionate full-stack developer, I build seamless web experiences from front to back, ensuring functionality meets creativity.
               Whether it's crafting intuitive user interfaces or optimizing backend logic, I thrive on turning complex problems into elegant solutions. 
               Let's build something great together.
-          </p>
-        </div>
+            </p>
+          </div>
           
-            </article>
-          </section>
-      
-          <section id="contact" class="container">
-            <h2 class="section-title"> <i class="bi bi-telephone"></i> Contact </h2>
-            <form class="container">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Adress mail</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                <div id="emailHelp" class="form-text">On partagera jamais votre email</div>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label"></label>
-                <textarea class="form-control" id="message" placeholder="Ecrivez votre texte ici"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Soumettre</button>
-            </form>
-          </section>
-          </main>
-             <section class="links-to-follow" data-aos="zoom-in-left">
-          <h2>Suivez-moi sur</h2>
+        </article>
+      </section>
+    </main>
+        <section class="links-to-follow" data-aos="zoom-in-left">
           <div class="links-container">
               <ul class="links-list">
-                  <li><a href=""><i class="bi bi-instagram"></i></a></li>
                   <li><a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
                   <li><a href=""><i class="bi bi-github"></i></a></li>
-                  <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
               </ul>
           </div>
-         
-      </section>
-
-        <a href="#top" id="goUpBtn"><i class="bi bi-caret-up-square-fill"></i></a>
- 
+        </section> 
     <footer></footer>
   </div>
 </div>
- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>   
 <script>
       const date = new Date().getFullYear();
       const copywrite =  `<i class="bi bi-c-circle"></i>  copywrite ${date} Tous droits réservés`
       document.querySelector('footer').innerHTML = copywrite
-    
       const subtitle = document.querySelector('.hero-section-subtext')
       typer(subtitle).line('Je m\'appelle Chafaa Mouhoubi, je suis un  developpeur fullstack')
       AOS.init();
+      var swiper = new Swiper(".mySwiper", {
+        direction: "horizontal",
+        slidesPerView: 3,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
 </script>
 </body>
 </html>

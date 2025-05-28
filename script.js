@@ -1,21 +1,22 @@
 function toggleTheme() {
-  const themeBtn = document.getElementById('themeBtn');
-  themeBtn.onclick = (e) => {
-   const docEl = document.documentElement
+    const docEl = document.documentElement;
     if (docEl.dataset.bsTheme == 'dark') {
       docEl.dataset.bsTheme = 'light';
-
-      themeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
+      document.getElementById('about').style.color = "#ffff"
     } else {
       docEl.dataset.bsTheme = 'dark';
 
-      docEl.style.backgroundImage =
-        // 'linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))';
-        themeBtn.innerHTML = '<i class="bi bi-brightness-high"></i>';
+      docEl.style.backgroundImage = themeBtn.innerHTML =
+        '<i class="bi bi-brightness-high"></i>';
+      document
+        .querySelector('.services-container')
+        .classList.remove('light-mode');
+      document
+        .querySelector('#works .cards-container')
+        .classList.remove('light-mode');
     }
-  };
 }
-toggleTheme();
+
 
 function createWorksCards(works) {
   for (let i = 0; i < works.length; i++) {
@@ -34,7 +35,7 @@ function createWorksCards(works) {
       .join('')}</ul>
     <a href=${
       element.ghLink
-    } target="_blank" class="btn btn-primary">View on Github</a>
+    } target="_blank" class="btn btn-primary">${document.documentElement.getAttribute('lang')=='en'?'View on ':'Voir sur'} Github</a>
     <span class='extend-icon'><i class="bi bi-arrows-angle-expand"></i></span>
   </div>
 `;
@@ -43,7 +44,7 @@ function createWorksCards(works) {
     });
     document.querySelector('.cards-container').appendChild(workCard);
   }
-  filterWorksCards(document.querySelectorAll('.cards-container .card'));
+  filterWorksCards(document.querySelectorAll('#works .cards-container .card'));
 }
 
 async function fetchWorks() {
@@ -58,28 +59,34 @@ fetchWorks();
 function createSkillsCard(cards) {
   for (let i = 0; i < cards.length; i++) {
     const element = cards[i];
-    const skillCard = document.createElement('div');
-    skillCard.classList.add('skill-card');
-    skillCard.setAttribute('data-lag', element.id.toString());
-    const cardPic = document.createElement('img');
-    cardPic.src = element.icon;
-    cardPic.setAttribute('height', '100');
-    const cardTitle = document.createElement('h6');
-    cardTitle.textContent = element.title;
+    // const skillCard = document.createElement('div');
+    // skillCard.classList.add('skill-card');
+    // const cardPic = document.createElement('img');
+    // cardPic.src = element.icon;
+    const logo = document.createElement('span')
+    logo.innerHTML = element.icon;
+    logo.style.fontSize = '30px'
+    // cardPic.setAttribute('height', '100');
+    // const cardTitle = document.createElement('h6');
+    // cardTitle.textContent = element.title;
     const progressBarWrapper = document.createElement('div');
     progressBarWrapper.classList.add('progress');
     progressBarWrapper.style.width = '100%';
     const progressBar = document.createElement('div');
     progressBar.classList.add('progress-bar');
-    progressBar.classList.add('progress-bar-animated');
-    progressBar.classList.add('progress-bar-striped');
+    // progressBar.classList.add('progress-bar-animated');
+    // progressBar.classList.add('progress-bar-striped');
     progressBar.style.width = element.level.toString();
     progressBar.style.backgroundColor =
-      progressBar.style.width < '50 %' ? 'rgba(231, 43, 43, 0.716)' : 'green';
+    progressBar.style.width < '50 %' ? 'rgba(232, 154, 10, 0.755)' : '#0b5ed7';
     progressBar.textContent = element.level;
-    progressBarWrapper.appendChild(progressBar);
-    skillCard.append(cardPic, cardTitle, progressBarWrapper);
-    document.querySelector('#skills .skills-container').appendChild(skillCard);
+    progressBarWrapper.append(logo, progressBar);
+    // skillCard.appendChild(progressBarWrapper);
+    if(element.category=='Front'){
+    document.querySelector('.front-skills').appendChild(progressBarWrapper);
+    }else{
+    document.querySelector('.back-skills ').appendChild(progressBarWrapper);
+    }
   }
 }
 async function fetchSkillCards() {
@@ -89,7 +96,7 @@ async function fetchSkillCards() {
       createSkillsCard(data);
     });
 }
-fetchSkillCards();
+
 
 const canvasoOn = (title, items) => {
   const titleEl = document.querySelector('.offcanvas-title');
@@ -126,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     content: '#smooth-content',
     smooth: 1.5,
     effects: true,
+    normalizeScroll: true,
   });
   document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
@@ -135,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       smoother.scrollTo(targetEl, true, 'top top');
     });
   });
+  
 });
 
 function filterWorksCards(items) {
@@ -166,35 +175,33 @@ function filterWorksCards(items) {
 function openLightBox(title, images) {
   document.querySelector('.modal-container').innerHTML = `
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width:100vw;">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">${title}</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
         <div class="modal-body">
-          <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+          <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="true">
               <div class="carousel-inner">
                 ${images
                   .map(
                     (image, index) => ` <div class="carousel-item ${
                       index == 0 ? 'active' : ''
                     }">
-                  <img src="${image}" class="d-block w-100" alt="${title}" height="400" width="350" style="object-fit:cover;object-position:top;">
+                  <img src="${image}" class="d-block w-100" alt="${title}"  width="100%"  height="700" style="object-fit:contain;object-position:top;">
               </div>`
                   )
                   .join('')}
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+               <i class="bi bi-chevron-left" id='leftBtn'></i>
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+              <i class="bi bi-chevron-right" id='rightBtn'></i>
               </button>
           </div>
             
-      </div>
+        </div>
     </div>
   </div>
   `;
@@ -205,3 +212,20 @@ function openLightBox(title, images) {
   //   smoother.refresh();
   // });
 }
+function createServicesCards(){
+  const services = ['web design', 'Frontend', 'Backend', 'code maintance', 'SEO']
+  const list = services.map(service=> ` <div class="card text-bg-dark">
+     <img src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg" class="img-fluid" alt="" height='200'>
+      <div class="card-img-overlay">
+        <h5 class="card-title">${service}</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+      </div>
+    </div>`).join('')
+    document.querySelector('.services-container').innerHTML = list
+}
+
+fetchSkillCards()
+
+
+ 

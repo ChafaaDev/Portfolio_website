@@ -3,80 +3,90 @@
     {
         "id":1,
         "title": "HTML",
-        "icon":"./data/html.webp",
-        "description":"",
+        "icon":"<i class=\"devicon-html5-plain-wordmark colored\"></i>",
+        "category":"Front",
         "level":"95%"
     },
       {
         "id":2,
-        "title": "Javascript",
-        "icon":"./data/js.webp",
-        "description":"",
+        "title": "CSS 3",
+        "icon":" <i class=\"devicon-css3-plain-wordmark colored\"></i> ",
+           
+         
+       "category":"Front",
         "level":"70%"
     },
       {
         "id":3,
-        "title": "CSS",
-        "icon":"./data/css.webp",
-        "description":"",
+        "title": "Javascript",
+        "icon":"<i class=\"devicon-javascript-plain colored\"></i>",   
+       "category":"Front",
          "level":"90%"
     },
       {
         "id":4,
         "title": "React.js",
-        "icon":"./data/react.webp",
-        "description":"",
+        "icon":" <i class=\"devicon-react-original-wordmark colored\"></i> ",
+           
+         
+       "category":"Front",
          "level":"70%"
     },
       {
         "id":5,
         "title": "Node.js",
-        "icon":"./data/node.webp",
-        "description":"",
+        "icon":"<i class=\"devicon-nodejs-plain-wordmark\"></i>",
+            
+        
+       "category":"Bakend",
          "level":"70%"
     }, 
-     {
-        "id":6,
-        "title": "SEO",
-        "icon":"./data/seo.webp",
-        "description":"",
-         "level":"95%"
-    },
+   
      {
         "id":7,
         "title": "Bootstrap",
-        "icon":"./data/bstp.png",
-        "description":"",
+        "icon":"<i class=\"devicon-bootstrap-plain colored\"></i>",
+       "category":"Front",
          "level":"60%"
     },
    
       {
         "id":8,
         "title": "MongoDB",
-        "icon":"./data/dbase.webp",
-        "description":"",
+        "icon":"<i class=\"devicon-mongodb-plain-wordmark colored\"></i>",
+          
+       "category":"Backend",
          "level":"50%"
     },
          {
         "id":9,
         "title": "Sass",
-        "icon":"./data/sass.webp",
-        "description":"",
+        "icon":"<i class='devicon-sass-original colored'></i>",
+            
+       "category":"Front",
          "level":"70%"
     },
             {
         "id":9,
         "title": "Next.js",
-        "icon":"./data/nextjs.png",
-        "description":"",
+        "icon":" <i class='devicon-nextjs-original-wordmark colored'></i>",
+       "category":"Front",
          "level":"35%"
     },
              {
         "id":10,
         "title": "Npm",
-        "icon":"./data/npm.avif",
-        "description":"",
+        "icon":"<i class='devicon-npm-original-wordmark colored'></i>",
+       "category":"Backend",
          "level":"50%"
+    },
+     
+    {
+        "id":10,
+        "title": "Express.js",
+        "icon":" <i class='devicon-express-original-wordmark'></i>",
+       "category":"Backend",
+         "level":"60%"
     }
     
 ]

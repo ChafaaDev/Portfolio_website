@@ -79,81 +79,103 @@ $btn-hover-bg-shade-amount:15%;
 }
 body,
 html {
-  overflow-x: hidden;
-  &::-webkit-scrollbar{
-    display: none;
-  }
+  height: 100%;
+  overflow: hidden;
+
 }
 
 body{
   @include display-column(2em, center);
-  // font-family: $first-font;
-  // background-image: linear-gradient(
-  //   to right,
-  //   rgb(55, 65, 81),
-  //   rgb(17, 24, 39),
-  //   rgb(0, 0, 0)
-  // );
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 0;
   overscroll-behavior: none;
-  --webkit-scrollbar:none;
-  height: 100vh;
+  // background-image: url('../images/bc_code_light.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #726f6ff5;
+  background-blend-mode:difference;
 }
 main {
-  @include display-column(3em, center);
-  width: 90%;
-  padding: 2em 0;
+  @include display-column(0, center);
+  width: 100%;
+  // padding: 2em 0;
   border-radius: 10px;
-  margin: auto;
+  // margin: auto;
+  // margin-top: 2rem;
 }
 header {
-  @include flex-row(100%, space-between, $first-font);
-  padding: 1em 0;
-  margin: 0;
-  width: 100%;
+  // margin-bottom: 2rem;
   .navbar {
     @include flex-row(100%, center, $first-font, 1em);
     width: 100%;
-    .nav-links {
-      @include links-layout($first-font);
-      justify-content: end;
-      #themeBtn {
-        background-color: transparent;
-        border: none;
-      }
-      .nav-link a {
-        text-decoration: none;
-        color: inherit;
-        font-size: 1.3em;
-        font-weight: 600;
-        transition: color .3s linear;
-        &:hover{
-         color: $primary-color;
-        &:active{
-          color: rgb(220, 70, 70);
-        }
-        }
+    .navbar-brand{
+      font-weight: 800;
+      color: $primary-color;
+      font-size: 1.7rem;
+    }
+    .navbar-nav{
+      @include  flex-row(100%, end, $first-font,1em ); 
+    }
+   .nav-item{
+    .nav-link{
+      font-weight: 700;
+      position: relative;
+      width: 100%;
+      &:hover::before{
+        content: '';
+        height:5px;
+        width:100%;
+        padding: 0;
+        position: absolute;
+        background-color: $primary-color;
+        bottom: 0;
+        left: 0;
+        animation: underline .3s linear;
+        transition: width .5 linear;
       }
     }
+   }
   }
+}
+@keyframes underline {
+  from{width: 0;}
+  to{width: 100%;}
+}
+
+.carousel{
+  #leftBtn, #rightBtn{
+  font-size: 2em;
+
+  color:#fff;
+  background-color: rgba(0, 0, 0, 0.718);
+  border-radius: 5px;
+}
+
 }
 
 .hero-section {
   @include display-column(2em, center);
+  justify-content: center;
   background-image: url('../images/developer-8764523.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.728);
+  background-color: rgba(0, 0, 0, 0.596);
   background-blend-mode: darken;
   width: 100%;
   padding: 1em;
+  height: 500px;
+  position: relative;
   .hero-section-container {
     @include display-column(3em, center);
     width: 100%;
-    padding: 1em;
+    padding: 2em;
+     .contact-link{
+        @include button-style($primary-color, $first-font);
+        text-decoration: none;
+        color: $font-color-white;
+        font-size: 1.3rem;
+      }
     .hero-section-subtext {
       @include display-column(2em, center);
       width: 100%;
@@ -164,29 +186,33 @@ header {
   }
 }
 .hero-section-title {
-  @include main-title($second-font, 900, 5em);
+  @include main-title(Arial, 900, 4em);
 }
 
 #about {
   @include display-column(1em, center);
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.877);
+  padding: 1em;
   .about-container {
-    @include flex-row(100%, center, $second-font, 0);
+    @include flex-row(100%, center, $second-font, 1em);
+    align-items: center;
     gap: 0em;
+    img{
+      border-radius:.5rem;
+    }
     & .about-me-text {
       @include display-column(1em, center);
       font-family: $first-font;
       padding: 1em;
-      // border-radius: 2em;
-      flex-basis: 100%;
+      flex-basis: 50%;
       & .main-title {
         @include main-title($second-font, 900, 4em);
-        // padding: 1em;
       }
       .quote-text {
         font-size: 1.2em;
         padding: 1em;
-        width: 90%;
-        margin: auto;
       }
       & .resume-link {
         @include button-style($primary-color, $second-font);
@@ -220,15 +246,19 @@ h2 {
 .my-works {
   @include display-column(1em, center);
   box-sizing: border-box;
-  padding: 0;
+  margin: 0;
+  width: 100%;
+  padding: 1em;
   h2 {
     @include section-title();
   }
+  background-color: rgb(30 32 33 / 37%);
   .cards-container{
-    @include flex-row(100%, center, $first-font);
+    @include flex-row(100%, space-between, $first-font);
     flex-wrap: wrap;
+    border-radius: 1em;
     gap: 1em;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     padding: 2em;
     .card {
       height: 30rem;
@@ -266,92 +296,126 @@ h2 {
 #skills {
   @include display-column(1em, center);
   width: 100%;
-  .skills-container {
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 1em;
-    gap: 1em;
-    .skill-card {
-      height: 150px;
-      width: 200px;
-      @include display-column(1em, center);
-      box-shadow: 5px 5px 10px #3a3838bc;
-      padding: 1em;
-      img {
-        height: 40%;
-        object-fit: cover;
-        width: auto;
-      }
-    }
-  }
+  padding: 1em;
   h2 {
     @include section-title();
   }
   .skills-and-tools-container{
     display: flex;
-    justify-content: space-between;
-    .tools{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      width: 30%;
-      h3{
-        font-family:$second-font;
-      }
-      .cards-container{
-        background-color: rgba(39, 39, 235, 0.69); 
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    .skills-container{
         @include flex-row(100%, center,$second-font, );
         gap: 1rem;
         padding: 1em;
-        .card{
-        @include flex-row(100%, -c, $second-font, );
-        justify-content: center;
-        height: 100px;
-        width: 100px;
-        border: none;
-        background-color: transparent;
+        box-sizing: border-box;
+      .front-skills, .back-skills, .soft-skills{
+        width: 300px;
+        height: 340px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.663);
+        padding: 1em;
+        border-radius: 10px;
+        align-items: center;
+        overflow-y:clip;
+        transition: max-height , scale 1s linear;
+        flex:1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: .8em;
+        justify-content: space-evenly;
+        ul{
+          list-style: none;
+          padding: 0;
+          text-align: center;
+          text-align: justify;
+        }
+        h5{
+          font-weight: 800;
+        }
+        .progress{
+          width: 100%;
+          display: flex;
+          height:35px;
+          align-items: center;
+          box-shadow: 2px 2px 10px black;
+          border-radius: 2px;
+          padding: 1em;
+          background-color: transparent;
+          gap: 1rem;
+        }
       }
+      .front-skills:hover{
+        overflow: visible;
+        max-height:100%;
+        scale:1.05;
       }
     }
+  .tools{
+    @include display-column(1em, space-evenly);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.663);
+    padding: 1em;
+    border-radius: 1em;
+    text-align: center;
+    font-family: $second-font;
+    height: 340px;
+    width: 300px;
+    justify-content: space-between;
+    ul{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+      // padding:1em;
+      li i {
+        font-size: 2rem;
+      }
+    }
+  }    
+    
   }
 }
 #services {
   @include display-column(2em, center);
-  padding: 0;
+  background-color: rgba(0, 0, 0, 0.726);
+  padding: 1em;
+  // height: 400px;
   width: 100%;
-  padding: 0;
   margin: 0;
   .services-container {
+    height: 100%;
     justify-content: center;
+    // background-color: #ffffffbe;
     display: flex;
-    box-sizing: border-box;
     width: 100%;
     gap: 1em;
-    padding: 2em 0;
+    padding: 2em;
     margin: 0;
+    border-radius: 1em;
     .card {
-      height: 200px;
+      height: 150px;
+      width: 150px;
       text-align: center;
-      width: auto;
-      // background-color: #0a0a0a95;
       border: none;
-      @include display-column(1em, center);
+      box-sizing: border-box;
       justify-content: center;
-      flex:1 1 auto;
-       box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), 
-                inset -5px -5px 10px rgba(255, 255, 255, 0.173);
-      transition: transform 0.2s ease-in;
-      flex-basis: 20%;
-      border-radius: .5em;
-      h4 {
-        font-family: $second-font;
-        font-size: 1.5em;
+      &:hover .card-img-overlay{
+        background-color:rgba(0, 0, 0, 0.625);
       }
-      &:hover {
-        transform: translate(0, -0.5em);
+      .card-img-overlay{
+        background-color: #2220209d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h5{
+          font-size: 1.5em;
+          font-weight: 800;
+        }
+      }
+      .card-img{
+        object-fit: cover;
+        height: 100%;
+        object-position: center;
       }
       i {
         color: rgba(255, 0, 0, 0.519);
@@ -361,6 +425,13 @@ h2 {
 }
 .section-title {
   @include section-title();
+}
+.modal-dialog{
+  height: 500px;
+  width: 700px;
+  img{
+    object-fit: cover;
+  }
 }
 #smooth-wrapper {
   position: fixed;
@@ -374,9 +445,7 @@ h2 {
 }
 
 #smooth-content {
-  min-height: 100vh;
-  overflow-x: hidden;
-  width: 100%;
+ 
   will-change: transform;
 }
 
@@ -447,7 +516,7 @@ h2 {
 
 @media only screen and (max-width:1200px){
    .hero-section-title{
-    font-size: 4rem;
+    font-size: 3rem;
   }
   #services{
     .services-container{
@@ -481,7 +550,7 @@ h2 {
   }
 
 }
-@media only screen and (max-width:823px){
+@media only screen and (max-width:850px){
   .hero-section-title{
     font-size: 2rem;
   }
@@ -520,9 +589,17 @@ h2 {
       font-size:5px;
     }
   }
+   #about{
+    .about-container{
+      flex-direction: column;
+    }
+    .quote-text{
+      font-size: 1.3rem;
+    }
+  }
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:580px){
   .card{
     border:none;
   }
@@ -543,4 +620,87 @@ h2 {
       }
     }
   }
+  .filter-buttons{
+   display: grid;
+   grid:auto/repeat(3,1fr);
+   .filter-button:nth-child(6){
+    grid-column-start: 2;
+    grid-column-end: 4;
+   }
+   h3{
+    display: none;
+   }
+  }
+ 
 }
+@media only screen and (max-width:450px){
+  #services{
+    .services-container{
+      .card{
+        height: 100px;
+      }
+    }
+  }
+  .hero-section{
+    height: 300px;
+    .hero-section-container{
+    justify-content: start;
+      .hero-section-subtext{
+      font-size:1em;
+    }
+    .contact-link{
+      font-size:1em;
+    }
+    }
+      h1{
+    font-size: 1.5rem;
+    text-align: justify;
+    }
+  }
+
+  h2{
+    font-size:1.2rem;
+  }
+  p{
+    font-size: 1rem;
+  }
+   #about{
+    .about-container{
+      video{
+        height: 200px;
+        width: 100%;
+      }
+      .about-me-text{
+        .quote-text{
+        font-size:1em;
+        padding: 0;
+        margin: 0;
+      }
+      }
+      
+    }
+  }
+}
+
+   .swiper {
+      width: 100%;
+      height: 350px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius:inherit;
+    }
