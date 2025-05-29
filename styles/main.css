@@ -178,7 +178,7 @@ header .navbar .nav-item .nav-link:hover::before {
 }
 #about .about-container img {
   border-radius: 0.5rem;
-  flex-basis: 40%;
+  object-fit: cover;
 }
 #about .about-container .about-me-text {
   display: flex;
@@ -592,6 +592,11 @@ h2 {
     height: 300px;
   }
 }
+@media only screen and (max-width: 1020px) {
+  #about .about-container img {
+    width: 40%;
+  }
+}
 @media only screen and (max-width: 830px) {
   .hero-section-title {
     font-size: 2rem;
@@ -689,6 +694,9 @@ h2 {
   }
   .filter-buttons h3 {
     display: none;
+  }
+  #about .about-container img {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 515px) {

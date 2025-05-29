@@ -202,7 +202,7 @@ header {
     gap: 0em;
     img {
       border-radius: 0.5rem;
-      flex-basis: 40%;
+      object-fit: cover;
     }
     & .about-me-text {
       @include display-column(1em, center);
@@ -513,6 +513,16 @@ h2 {
     }
   }
 }
+@media only screen and (max-width:1020px){
+  #about{
+    .about-container{
+      img{
+        width: 40%;
+      }
+    }
+  }
+}
+  
 
 @media only screen and (max-width: 830px) {
   .hero-section-title {
@@ -628,6 +638,13 @@ h2 {
     }
     h3 {
       display: none;
+    }
+  }
+  #about{
+    .about-container{
+      img{
+        width: 100%;
+      }
     }
   }
 }
