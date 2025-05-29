@@ -28,8 +28,51 @@
   />
   <meta
     name="twitter:image"
-    content="[URL to your portfolio preview image]"
+    content="./images/website.png"
   />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Chafaa Mouhoubi",
+      "jobTitle": "Junior Full-Stack Developer",
+      "url": "https://chafaadev.github.io/Portfolio_website/",
+      "sameAs": [
+        "https://github.com/ChafaaDev",
+        "https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "Frontend Development",
+        "Backend Development",
+        "SEO",
+        "React",
+        "CSS",
+        "MongoDB"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Web Developer",
+        "description": "Creating and maintaining websites using frontend and backend technologies."
+      },
+      "offers": {
+        "@type": "Service",
+        "name": "Web Development Services",
+        "serviceType": [
+          "Web Design",
+          "Frontend Development",
+          "Backend Development",
+          "Code Maintenance",
+          "Optimization"
+        ]
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/"
+      }
+    }
+  </script>
   <link rel="icon" href="./images/favicon.JPG" type="image/x-icon" />
   <title>
     Portfolio website, I'm a junior full-stack developper, here you get to
@@ -126,7 +169,7 @@
       <section id="hero" data-aos="zoom-out-down" class="hero-section">
         <div class="hero-section-container">
           <h1 class="hero-section-title" style="color: #ffffffc6">
-           Welcome to my Portfolio
+           WELCOME TO MY PORTFOLIO
           </h1>
           <span class="hero-section-subtext" style="color: #ffffffc6"></span>
           <a href="https://www.linkedin.com/in/chafaa-mouhoubi-7070a4367/" target="_blank" class="contact-link">contact me</a>
@@ -137,24 +180,25 @@
           <h2 class="section-title">Services</h2>
           <div class="services-container">
             <div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="./images/webd.jpg" alt="">
-    </div>
-    <div class="swiper-slide"><img src="./images/bc_code.jpeg" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img src="./images/bc_code_light.jpeg" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img src="./images/bc_code_light.jpeg" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img src="./images/seo.jpg" alt="">
-    </div>
-  </div>
-  <div class="swiper-pagination"></div>
-</div>
-            
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h3>Web Design</h3>
+                </div>
+                <div class="swiper-slide">
+                  <h3>Frontend</h3>
+                </div>
+                <div class="swiper-slide">
+                <h3>Backend</h3>
+                </div>
+                <div class="swiper-slide">
+                <h3>Code Maintenance</h3>
+                </div>
+                <div class="swiper-slide">
+                <h3>Optimization</h3>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
         </section>
 
@@ -201,15 +245,15 @@
           <h2 class="section-title">Skills</h2>
           <div class="skills-and-tools-container">
             <div class="skills-container">
-              <div class="front-skills">
-                <h5>Front-end</h5>
+              <div class="front-skills card">
+                <h3>Front-end</h3>
               </div>
             
-              <div class="back-skills">
-                <h5>Backend</h5>
+              <div class="back-skills card">
+                <h3>Backend</h3>
               </div>
-              <div class="soft-skills">
-                  <h5>Soft skills</h5>
+              <div class="soft-skills card">
+                  <h3>Soft skills</h3>
                   <ul>
                   <li>Problem solving</li>
                   <li>Creativity & adaptability</li>
@@ -218,12 +262,29 @@
                   </ul>
               </div>
             </div>
+          <div class="tools card card">
+            <h3>Tools & environment</h3>
+            <ul style="list-style: none;">
+              <li>
+                <i class="devicon-vscode-plain-wordmark colored"></i>
+              </li>
+              <li>
+                <i class="devicon-figma-plain colored"></i>
+              </li>
+              <li>
+                <i class="bi bi-github"></i>
+              </li>
+              <li>
+                <i class="bi bi-git"></i>
+              </li>
+            </ul>
+          </div>
           </div>
         </section>
         <section id="about">
           <h2 class="section-title">About me</h2>
           <article class="about-container" data-aos="zoom-out-down">
-            <img src="./images/aicoder.jpg" alt="" height="400">
+            <img src="./images/aicoder.webp" alt="a young man working on his laptop" height="300">
             <div class="about-me-text">
               <p class="quote-text">
                 <i class="bi bi-quote"></i>
@@ -233,7 +294,8 @@
                 functionality meets creativity. Whether it's crafting
                 intuitive user interfaces or optimizing backend logic, I
                 thrive on turning complex problems into elegant solutions.
-                Let's build something great together.
+                Let's build something great together. <br>
+                Chafaa Mouhoubi.
               </p>
             </div>
           </article>
@@ -282,6 +344,24 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      breakpoints: {
+        "@0.00": {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        "@0.75": {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        "@1.00": {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        "@1.50": {
+          slidesPerView: 4,
+          spaceBetween: 50,
+        },
       },
     });
   </script>

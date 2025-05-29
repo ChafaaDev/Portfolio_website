@@ -5,15 +5,6 @@ function toggleTheme() {
       document.getElementById('about').style.color = "#ffff"
     } else {
       docEl.dataset.bsTheme = 'dark';
-
-      docEl.style.backgroundImage = themeBtn.innerHTML =
-        '<i class="bi bi-brightness-high"></i>';
-      document
-        .querySelector('.services-container')
-        .classList.remove('light-mode');
-      document
-        .querySelector('#works .cards-container')
-        .classList.remove('light-mode');
     }
 }
 
@@ -29,7 +20,7 @@ function createWorksCards(works) {
       element.title
     } height="300">
   <div class="card-body">
-    <h5 class="card-title">${element.title}</h5>
+    <h3 class="card-title">${element.title}</h3>
     <ul class="card-text">${element.tags
       .map((tag) => `<li class="badge text-bg-danger">${tag}</li>`)
       .join('')}</ul>
@@ -59,29 +50,19 @@ fetchWorks();
 function createSkillsCard(cards) {
   for (let i = 0; i < cards.length; i++) {
     const element = cards[i];
-    // const skillCard = document.createElement('div');
-    // skillCard.classList.add('skill-card');
-    // const cardPic = document.createElement('img');
-    // cardPic.src = element.icon;
     const logo = document.createElement('span')
     logo.innerHTML = element.icon;
     logo.style.fontSize = '30px'
-    // cardPic.setAttribute('height', '100');
-    // const cardTitle = document.createElement('h6');
-    // cardTitle.textContent = element.title;
     const progressBarWrapper = document.createElement('div');
     progressBarWrapper.classList.add('progress');
     progressBarWrapper.style.width = '100%';
     const progressBar = document.createElement('div');
     progressBar.classList.add('progress-bar');
-    // progressBar.classList.add('progress-bar-animated');
-    // progressBar.classList.add('progress-bar-striped');
     progressBar.style.width = element.level.toString();
     progressBar.style.backgroundColor =
     progressBar.style.width < '50 %' ? 'rgba(232, 154, 10, 0.755)' : '#0b5ed7';
     progressBar.textContent = element.level;
     progressBarWrapper.append(logo, progressBar);
-    // skillCard.appendChild(progressBarWrapper);
     if(element.category=='Front'){
     document.querySelector('.front-skills').appendChild(progressBarWrapper);
     }else{
@@ -96,35 +77,6 @@ async function fetchSkillCards() {
       createSkillsCard(data);
     });
 }
-
-
-const canvasoOn = (title, items) => {
-  const titleEl = document.querySelector('.offcanvas-title');
-  const bodyEl = document.querySelector('.offcanvas-body');
-
-  if (!titleEl || !bodyEl) {
-    console.warn('Offcanvas elements not found');
-    return;
-  }
-
-  titleEl.textContent = title;
-
-  // Create HTML for the gallery
-  const galleryHTML = [items]
-    .map((item) => {
-      return `
-        <div class="col-6 col-md-4 mb-3">
-          <img src="${item.url}" class="img-fluid rounded shadow-sm" alt="Gallery Image" />
-        </div>
-      `;
-    })
-    .join('');
-
-  // Wrap in a row
-  bodyEl.innerHTML = `<div class="row">${galleryHTML}</div>`;
-  const bsOffcanvas = new bootstrap.Offcanvas('#myOffcanvas');
-  bsOffcanvas.show();
-};
 
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
