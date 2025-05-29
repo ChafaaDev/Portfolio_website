@@ -3,6 +3,7 @@
         "id":1,
         "title":"Booki",
         "cover" : "./images/booki.webp",
+        "description":"Booki website where you can find hotels in a city to visit and the activities to do there",
         "snapShots":[
             "./images/booki.webp",
             "./images/booki-sm.webp",
@@ -18,6 +19,7 @@
         "id":2,
         "title":"Sophie Bluel",
         "cover" : "./images/sophie-home.webp",
+        "description":"Shophie Bluel website, an interior architect",
          "snapShots":[
             "./images/sophie-home.webp",
             "./images/sb_modal.webp",
@@ -33,6 +35,7 @@
         "id":3,
         "title":"Kasa",
         "cover" : "./images/kasa-home.jpeg",
+        "description":"Kasa website, destined for house rentals between individuals",
          "snapShots":[
             "./images/kasa-home.jpeg",
             "./images/kasa-sm.webp",
@@ -49,12 +52,12 @@
         "id":4,
         "title":"Nina Carducci",
         "cover" : "./images/nina.webp",
+        "description":"website of Sophie Bluel, a professional photographer ",
          "snapShots":[
             "./images/nina.webp",
             "./images/wave.webp",
             "./images/lhouse.webp"
         ],
-        "description":"Optimisation du site de la photographe Nina Carducci",
         "tags":[
           "HTML 5 ", "CSS" , "SEO", "JQuery"
         ],
@@ -65,6 +68,7 @@
         "id":5,
         "title":"Mon vieux Grimoire",
         "cover" : "./images/vgrim.png",
+        "description":"website Mon vieux grimoire, to see add and rate books",
          "snapShots":[
             "./images/vgrim.png",
             "./images/vgbook.png",
@@ -81,6 +85,7 @@
         "id":6,
         "title":"San Fransisco Cofee",
         "cover" : "./images/coffee.webp",
+        "description":"Home page of San Fransisco Coffee",
          "snapShots":[
             "./images/coffee.webp",
             "./images/clogin.webp"
