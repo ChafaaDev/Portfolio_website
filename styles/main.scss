@@ -262,19 +262,38 @@ h2 {
     gap: 1em;
     padding: 2em;
     .card {
-      height: 30rem;
+      height: 27rem;
       width: 20rem;
       box-sizing: border-box;
-      @include display-column(1em, start);
+      @include display-column(0, start);
       box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       box-sizing: border-box;
       position: relative;
+      justify-content: start;
+      gap: 0;
       .card-img-top {
-        height: 70%;
+        height: 78%;
         width: 100%;
         object-fit: cover;
         object-position: top;
+      }
+      .card-body{
+       gap:0;
+       padding: 0 .5em;
+       h3{
+        font-size: 1.2em;
+       }
+       .btn{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin-top: 0;
+        &:hover{
+          text-decoration: underline;
+          color: #ffff;
+        }
+       }
       }
       ul {
         list-style: none;

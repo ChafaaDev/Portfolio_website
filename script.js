@@ -159,23 +159,13 @@ function openLightBox(title, images) {
   `;
   const myModal = new bootstrap.Modal('.modal');
   myModal.show();
-  // const smoother = ScrollSmoother.get();
-  // document.querySelector('.modal').addEventListener('hidden.bs.modal', () => {
-  //   smoother.refresh();
-  // });
+  // myModal.handleUpdate()
+  const smoother = ScrollSmoother.get();
+  document.querySelector('.modal').addEventListener('hidden.bs.modal', () => {
+    smoother.refresh();
+  });
 }
-function createServicesCards(){
-  const services = ['web design', 'Frontend', 'Backend', 'code maintance', 'SEO']
-  const list = services.map(service=> ` <div class="card text-bg-dark">
-     <img src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg" class="img-fluid" alt="" height='200'>
-      <div class="card-img-overlay">
-        <h5 class="card-title">${service}</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small>Last updated 3 mins ago</small></p>
-      </div>
-    </div>`).join('')
-    document.querySelector('.services-container').innerHTML = list
-}
+
 
 fetchSkillCards()
 
