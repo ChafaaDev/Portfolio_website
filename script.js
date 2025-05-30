@@ -10,6 +10,7 @@ function toggleTheme() {
 
 
 function createWorksCards(works) {
+  const lang = document.documentElement.getAttribute('lang')
   for (let i = 0; i < works.length; i++) {
     const element = works[i];
     const workCard = document.createElement('div');
@@ -24,13 +25,12 @@ function createWorksCards(works) {
     <ul class="card-text">${element.tags
       .map((tag) => `<li class="badge text-bg-danger">${tag}</li>`)
       .join('')}</ul>
+      <p class="description">${lang =='fr'? (element.descriptionFr) : (element.description)}</p>
     <a href=${
       element.ghLink
-    } target="_blank" class="btn btn-primary">${document.documentElement.getAttribute('lang')=='en'?'View on ':'Voir sur'} Github</a>
-    <span class='extend-icon'><i class="bi bi-arrows-angle-expand"></i></span>
-  </div>
+    } target="_blank" class="btn btn-primary">${lang =='en'?'View on ':'Voir sur'} Github</a>
 `;
-    workCard.querySelector('.extend-icon').addEventListener('click', () => {
+    workCard.addEventListener('click', () => {
       openLightBox(element.title, element.snapShots);
     });
     document.querySelector('.cards-container').appendChild(workCard);
@@ -168,6 +168,5 @@ function openLightBox(title, images) {
 
 
 fetchSkillCards()
-
 
  
